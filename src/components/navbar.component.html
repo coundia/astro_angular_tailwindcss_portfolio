@@ -1,0 +1,48 @@
+<nav class="w-full px-6 py-4 bg-base-100 shadow-md flex items-center justify-between">
+	<!-- Left Section: Profile -->
+	<div class="flex items-center gap-4">
+		<img class="mask mask-circle size-12" [src]="profilePicture" alt="Profile picture of {{fullName}}" />
+		<span class="text-lg font-semibold hidden sm:block">{{fullName}}</span>
+	</div>
+
+	<!-- Desktop Navigation -->
+	<ul class="hidden lg:flex space-x-6 text-lg">
+		<li><a [routerLink]="homeRt" class="hover:text-primary">{{home}}</a></li>
+		<li><a [routerLink]="projectsRt" class="hover:text-primary">{{projects}}</a></li>
+		<li><a [routerLink]="skillsRt" class="hover:text-primary">{{skills}}</a></li>
+		<li><a [routerLink]="aboutRt" class="hover:text-primary">{{about}}</a></li>
+		<li><a [routerLink]="contactRt" class="hover:text-primary">{{contact}}</a></li>
+		<li *ngIf="isBlogPopulated">
+			<a [routerLink]="blogRt + '/1'" class="hover:text-primary">{{blog}}</a>
+		</li>
+	</ul>
+
+	<!-- Right Section: Dark Mode Toggle & Mobile Menu Button -->
+	<div class="flex items-center gap-4">
+		<!-- Uncomment Lang Switcher Component if needed -->
+		<!-- <app-lang-switcher></app-lang-switcher> -->
+		<app-dark-light-controller></app-dark-light-controller>
+		<!-- Mobile Menu Button -->
+		<label for="nav-drawer" class="lg:hidden btn btn-square btn-ghost">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="size-6 stroke-current">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+			</svg>
+		</label>
+	</div>
+
+	<!-- Mobile Drawer -->
+	<input id="nav-drawer" type="checkbox" class="drawer-toggle hidden" />
+	<div class="drawer-side lg:hidden">
+		<label for="nav-drawer" class="drawer-overlay"></label>
+		<ul class="menu p-4 w-64 min-h-full bg-base-200">
+			<li><a [routerLink]="homeRt" class="hover:text-primary">{{home}}</a></li>
+			<li><a [routerLink]="projectsRt" class="hover:text-primary">{{projects}}</a></li>
+			<li><a [routerLink]="skillsRt" class="hover:text-primary">{{skills}}</a></li>
+			<li><a [routerLink]="aboutRt" class="hover:text-primary">{{about}}</a></li>
+			<li><a [routerLink]="contactRt" class="hover:text-primary">{{contact}}</a></li>
+			<li *ngIf="isBlogPopulated">
+				<a [routerLink]="blogRt + '/1'" class="hover:text-primary">{{blog}}</a>
+			</li>
+		</ul>
+	</div>
+</nav>

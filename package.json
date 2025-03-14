@@ -21,6 +21,7 @@
     "@angular/platform-browser": "^19.2.2",
     "@angular/platform-browser-dynamic": "^19.2.2",
     "@angular/platform-server": "^19.2.2",
+    "@angular/router": "^19.2.2",
     "@astrojs/mdx": "^4.2.0",
     "@astrojs/react": "^4.1.4",
     "@astrojs/rss": "^4.0.11",

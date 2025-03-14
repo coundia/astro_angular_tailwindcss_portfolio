@@ -6,6 +6,7 @@ import Navbar from '../components/ui/Navbar.astro';
 import Head from '../components/Head.astro';
 import {seo, profile, template} from '../data/settings';
 import Footer from '../components/ui/Footer.astro';
+import {NavbarComponent} from "../components/NavbarComponent";
 
 type Props = {
 	title?: string;
@@ -28,7 +29,7 @@ const {
 </head>
 <body class="bg-base-100">
 <div id="navbar" class="fixed top-0 left-0 w-full bg-base-100/90 backdrop-blur-md shadow-sm z-50">
-	<Navbar/>
+	<NavbarComponent/>
 </div>
 
 <main id="wrapper"

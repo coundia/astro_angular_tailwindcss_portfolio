@@ -1,5 +1,5 @@
-import { profile } from '../settings'
-import { template } from '../settings'
+import { profile } from '../data/settings.ts'
+import { template } from '../data/settings.ts'
 
 export function highlightAuthor(authors: string): string{
 	const author = authors.split(', ')

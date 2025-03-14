@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import {template} from '../../settings'
+import {template} from '../../data/settings'
 import {getCollection, render} from 'astro:content'
 
 export async function getStaticPaths(): Promise<Array<{ params: { slug: string }, props: { post: any } }>> {

@@ -4,7 +4,7 @@ import sitemap from "@astrojs/sitemap";
 import analogjsangular from "@analogjs/astro-angular";
 import angular from '@analogjs/astro-angular';
 import mdx from "@astrojs/mdx";
-import {template} from "@/settings.js";
+import {template} from "@/data/settings.ts";
 
 export default defineConfig({
     integrations: [

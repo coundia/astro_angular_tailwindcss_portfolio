@@ -1,5 +1,5 @@
 import rss from "@astrojs/rss";
-import { seo } from "../settings";
+import { seo } from "../data/settings.ts";
 import { getCollection } from "astro:content";
 
 export async function GET(context) {

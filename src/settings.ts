@@ -25,7 +25,7 @@ export const template = {
 	darkTheme: "dark",
 	excerptLength: 200,
 	postPerPage: 5,
-	base: "/fr"
+	base: "/"
 };
 
 export const seo = {

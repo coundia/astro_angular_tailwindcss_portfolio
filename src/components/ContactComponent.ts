@@ -34,7 +34,7 @@ import { NgIf } from "@angular/common";
 				</div>
 
 				<div>
-					<label class="block font-medium text-gray-700">Message *</label>
+					<label class="block font-medium ">Message *</label>
 					<textarea
 							formControlName="message"
 							rows="6"
@@ -49,9 +49,9 @@ import { NgIf } from "@angular/common";
 				<button
 						type="submit"
 						[disabled]="contactForm.invalid || loading"
-						class="w-full bg-primary text-white py-3 rounded-md flex items-center justify-center gap-2"
+						class="btn btn-primary btn-sm self-center justify-self-center px-4"
 				>
-					<span *ngIf="loading" class="animate-spin border-2 border-white border-t-transparent rounded-full w-5 h-5"></span>
+					<span *ngIf="loading" class="animate-spin border-2 border-t-transparent rounded-full w-5 h-5"></span>
 					<span>{{ loading ? "Envoi en cours..." : "Envoyer le message" }}</span>
 				</button>
 			</form>

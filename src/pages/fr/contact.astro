@@ -14,11 +14,10 @@ const helpText = "Helping binding";
 ---
 
 <Layout title="Research | Dr. Marie Curie">
-	<div class="prose max-w-none">
+	<div class="flex justify-center items-center flex-col max-w-none">
 		<h1 class="text-3xl font-bold mb-8">Contactez - moi</h1>
 
 		<ContactComponent client:visible  name="Max"/>
-		<HelloComponent helpText={helpText} client:visible/>
 
 	</div>
 </Layout>

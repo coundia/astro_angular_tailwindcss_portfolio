@@ -20,7 +20,16 @@ const skillsRt = getRelativeLocaleUrl("fr", "skills");
 const aboutRt = getRelativeLocaleUrl("fr", "about");
 const blogRt = getRelativeLocaleUrl("fr", "blog");
 const contactRt = getRelativeLocaleUrl("fr", "contact");
+import { titles } from '../../data/navbar'
 
+const {
+	home,
+	projects,
+	skills,
+	about,
+	contact,
+	blog
+} = titles.fr;
 ---
 
 <nav class="w-full px-6 py-4 bg-base-100 shadow-md flex items-center justify-between">
@@ -32,13 +41,13 @@ const contactRt = getRelativeLocaleUrl("fr", "contact");
 
 	<!-- Desktop Navigation -->
 	<ul class="hidden lg:flex space-x-6 text-lg">
-		<li><a href={`${homeRt}`} class="hover:text-primary">Home</a></li>
-		<li><a href={`${projectsRt}`} class="hover:text-primary">Projects</a></li>
-		<li><a href={`${skillsRt}`} class="hover:text-primary">Skills</a></li>
-		<li><a href={`${aboutRt}`} class="hover:text-primary">About</a></li>
-		<li><a href={`${contactRt}`} class="hover:text-primary">Contact</a></li>
+		<li><a href={`${homeRt}`} class="hover:text-primary">{home}</a></li>
+		<li><a href={`${projectsRt}`} class="hover:text-primary">{projects}</a></li>
+		<li><a href={`${skillsRt}`} class="hover:text-primary">{skills}</a></li>
+		<li><a href={`${aboutRt}`} class="hover:text-primary">{about}</a></li>
+		<li><a href={`${contactRt}`} class="hover:text-primary">{contact}</a></li>
 		{isBlogPopulated && (
-				<li><a href={`${blogRt}1`} class="hover:text-primary">Blog</a></li>
+				<li><a href={`${blogRt}1`} class="hover:text-primary">{blog}</a></li>
 		)}
 	</ul>
 
@@ -60,13 +69,13 @@ const contactRt = getRelativeLocaleUrl("fr", "contact");
 	<div class="drawer-side lg:hidden">
 		<label for="nav-drawer" class="drawer-overlay"></label>
 		<ul class="menu p-4 w-64 min-h-full bg-base-200">
-			<li><a href={`${homeRt}`} class="hover:text-primary">Home</a></li>
-			<li><a href={`${projectsRt}`} class="hover:text-primary">Projects</a></li>
-			<li><a href={`${skillsRt}`} class="hover:text-primary">Skills</a></li>
-			<li><a href={`${aboutRt}`} class="hover:text-primary">About</a></li>
-			<li><a href={`${contactRt}`} class="hover:text-primary">Contact</a></li>
+			<li><a href={`${homeRt}`} class="hover:text-primary">{home}</a></li>
+			<li><a href={`${projectsRt}`} class="hover:text-primary">{projects}</a></li>
+			<li><a href={`${skillsRt}`} class="hover:text-primary">{skills}</a></li>
+			<li><a href={`${aboutRt}`} class="hover:text-primary">{about}</a></li>
+			<li><a href={`${contactRt}`} class="hover:text-primary">{contact}</a></li>
 			{isBlogPopulated && (
-					<li><a href={`${blogRt}/1`} class="hover:text-primary">Blog</a></li>
+					<li><a href={`${blogRt}1`} class="hover:text-primary">{blog}</a></li>
 			)}
 		</ul>
 	</div>

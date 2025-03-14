@@ -1,1 +1,82 @@
+---
+import { Image } from 'astro:assets'
+import { profile } from '../../data/settings'
+import SocialIcons from './SocialIcons.astro'
+import ProfilePictures from '@/assets/coundia.png'
+import { getCollection } from 'astro:content'
+import { template } from '../../data/settings'
+import DarkLightController from "./DarkLightController.astro";
+import {LangSwitcherComponent} from '@/components/LangSwitcherComponent'
 
+const isBlogPopulated = await getCollection('blog').then(collection => collection.length > 0)
+
+const { fullName, title } = profile
+
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+const homeRt = getRelativeLocaleUrl("fr", "/");
+const projectsRt = getRelativeLocaleUrl("fr", "projects");
+const skillsRt = getRelativeLocaleUrl("fr", "skills");
+const aboutRt = getRelativeLocaleUrl("fr", "about");
+const blogRt = getRelativeLocaleUrl("fr", "blog");
+const contactRt = getRelativeLocaleUrl("fr", "contact");
+import { titles } from '@/data/navbar'
+
+const {
+	home,
+	projects,
+	skills,
+	about,
+	contact,
+	blog
+} = titles.fr;
+---
+
+<nav class="w-full px-6 py-4 bg-base-100 shadow-md flex items-center justify-between">
+	<!-- Left Section: Profile -->
+	<div class="flex items-center gap-4">
+		<Image class="mask mask-circle size-12" src={ProfilePictures} alt={`Profile picture of ${fullName}`} />
+		<span class="text-lg font-semibold hidden sm:block">{fullName}</span>
+	</div>
+
+	<!-- Desktop Navigation -->
+	<ul class="hidden lg:flex space-x-6 text-lg">
+		<li><a href={`${homeRt}`} class="hover:text-primary">{home}</a></li>
+		<li><a href={`${projectsRt}`} class="hover:text-primary">{projects}</a></li>
+		<li><a href={`${skillsRt}`} class="hover:text-primary">{skills}</a></li>
+		<li><a href={`${aboutRt}`} class="hover:text-primary">{about}</a></li>
+		<li><a href={`${contactRt}`} class="hover:text-primary">{contact}</a></li>
+		{isBlogPopulated && (
+				<li><a href={`${blogRt}1`} class="hover:text-primary">{blog}</a></li>
+		)}
+	</ul>
+
+	<!-- Right Section: Dark Mode Toggle & Mobile Menu Button -->
+	<div class="flex items-center gap-4">
+
+		<!--<LangSwitcherComponent client:visible/>-->
+		<DarkLightController />
+		<!-- Mobile Menu Button -->
+		<label for="nav-drawer" class="lg:hidden btn btn-square btn-ghost">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="size-6 stroke-current">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+			</svg>
+		</label>
+	</div>
+
+	<!-- Mobile Drawer -->
+	<input id="nav-drawer" type="checkbox" class="drawer-toggle hidden" />
+	<div class="drawer-side lg:hidden">
+		<label for="nav-drawer" class="drawer-overlay"></label>
+		<ul class="menu p-4 w-64 min-h-full bg-base-200">
+			<li><a href={`${homeRt}`} class="hover:text-primary">{home}</a></li>
+			<li><a href={`${projectsRt}`} class="hover:text-primary">{projects}</a></li>
+			<li><a href={`${skillsRt}`} class="hover:text-primary">{skills}</a></li>
+			<li><a href={`${aboutRt}`} class="hover:text-primary">{about}</a></li>
+			<li><a href={`${contactRt}`} class="hover:text-primary">{contact}</a></li>
+			{isBlogPopulated && (
+					<li><a href={`${blogRt}1`} class="hover:text-primary">{blog}</a></li>
+			)}
+		</ul>
+	</div>
+</nav>

@@ -1,13 +1,12 @@
-import {Component, type OnInit} from '@angular/core';
-import {Router, RouterLink} from '@angular/router';
-import { getCollection } from 'astro:content'
+import { Component,type OnInit } from '@angular/core';
+import { getCollection } from 'astro:content';
 
 @Component({
 	selector: 'app-navbar',
 	templateUrl: './navbar.component.html',
 	standalone: true,
 	imports: [
-		RouterLink
+		// No need to import Angular Router components since we use Astro's routing system
 	]
 })
 export class NavbarComponent implements OnInit {
@@ -29,7 +28,7 @@ export class NavbarComponent implements OnInit {
 	contact: string = 'Contact';
 	blog: string = 'Blog';
 
-	constructor(private router: Router) {}
+	constructor() {}
 
 	ngOnInit(): void {
 		this.checkBlogCollection();

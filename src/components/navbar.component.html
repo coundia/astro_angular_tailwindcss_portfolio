@@ -7,13 +7,13 @@
 
 	<!-- Desktop Navigation -->
 	<ul class="hidden lg:flex space-x-6 text-lg">
-		<li><a [routerLink]="homeRt" class="hover:text-primary">{{home}}</a></li>
-		<li><a [routerLink]="projectsRt" class="hover:text-primary">{{projects}}</a></li>
-		<li><a [routerLink]="skillsRt" class="hover:text-primary">{{skills}}</a></li>
-		<li><a [routerLink]="aboutRt" class="hover:text-primary">{{about}}</a></li>
-		<li><a [routerLink]="contactRt" class="hover:text-primary">{{contact}}</a></li>
+		<li><a href="{{homeRt}}" class="hover:text-primary">{{home}}</a></li>
+		<li><a href="{{projectsRt}}" class="hover:text-primary">{{projects}}</a></li>
+		<li><a href="{{skillsRt}}" class="hover:text-primary">{{skills}}</a></li>
+		<li><a href="{{aboutRt}}" class="hover:text-primary">{{about}}</a></li>
+		<li><a href="{{contactRt}}" class="hover:text-primary">{{contact}}</a></li>
 		<li *ngIf="isBlogPopulated">
-			<a [routerLink]="blogRt + '/1'" class="hover:text-primary">{{blog}}</a>
+			<a href="{{blogRt}}/1" class="hover:text-primary">{{blog}}</a>
 		</li>
 	</ul>
 
@@ -35,13 +35,13 @@
 	<div class="drawer-side lg:hidden">
 		<label for="nav-drawer" class="drawer-overlay"></label>
 		<ul class="menu p-4 w-64 min-h-full bg-base-200">
-			<li><a [routerLink]="homeRt" class="hover:text-primary">{{home}}</a></li>
-			<li><a [routerLink]="projectsRt" class="hover:text-primary">{{projects}}</a></li>
-			<li><a [routerLink]="skillsRt" class="hover:text-primary">{{skills}}</a></li>
-			<li><a [routerLink]="aboutRt" class="hover:text-primary">{{about}}</a></li>
-			<li><a [routerLink]="contactRt" class="hover:text-primary">{{contact}}</a></li>
+			<li><a href="{{homeRt}}" class="hover:text-primary">{{home}}</a></li>
+			<li><a href="{{projectsRt}}" class="hover:text-primary">{{projects}}</a></li>
+			<li><a href="{{skillsRt}}" class="hover:text-primary">{{skills}}</a></li>
+			<li><a href="{{aboutRt}}" class="hover:text-primary">{{about}}</a></li>
+			<li><a href="{{contactRt}}" class="hover:text-primary">{{contact}}</a></li>
 			<li *ngIf="isBlogPopulated">
-				<a [routerLink]="blogRt + '/1'" class="hover:text-primary">{{blog}}</a>
+				<a href="{{blogRt}}/1" class="hover:text-primary">{{blog}}</a>
 			</li>
 		</ul>
 	</div>

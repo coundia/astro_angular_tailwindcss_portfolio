@@ -1,0 +1,17 @@
+---
+import { profile } from '../../settings'
+import SocialIcons from "./SocialIcons.astro";
+
+const { fullName } = profile
+---
+
+<footer class='footer footer-center text-base-content px-4 py-8'>
+	<aside>
+		<div class="flex items-center">
+			<SocialIcons />
+		</div>
+		<p>
+			Copyright © {new Date().getFullYear()} - All right reserved by {fullName}
+		</p>
+	</aside>
+</footer>

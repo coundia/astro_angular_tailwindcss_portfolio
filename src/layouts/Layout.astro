@@ -1,0 +1,96 @@
+---
+import {ClientRouter} from 'astro:transitions';
+import BetterIcon from '../components/ui/BetterIcon.astro';
+import DarkLightController from '../components/ui/DarkLightController.astro';
+import Navbar from '../components/ui/Navbar.astro';
+import Head from '../components/Head.astro';
+import {seo, profile, template} from '../settings';
+import Footer from '../components/ui/Footer.astro';
+
+type Props = {
+	title?: string;
+	description?: string;
+	image?: string;
+};
+
+const {
+	title = seo.default_title,
+	description = seo.default_description,
+	image = seo.default_image,
+} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+<head>
+	{template.transitions &&
+			<ClientRouter/>}
+	<Head title={title} description={description} image={image}/>
+</head>
+<body class="bg-base-100">
+<div id="navbar" class="fixed top-0 left-0 w-full bg-base-100/90 backdrop-blur-md shadow-sm z-50">
+	<Navbar/>
+</div>
+
+<main id="wrapper"
+	  class="p-8 pt-20 lg:pt-24 lg:max-w-5xl max-w-full mx-auto min-h-screen flex flex-col justify-between">
+	<div id="content"
+		 class="overflow-auto max-h-[80vh]">
+		<slot/>
+	</div>
+	<div id="footerWrapper"
+		 class="fixed bottom-0 left-0 w-full z-50 py-4 flex justify-between items-center">
+		<Footer/>
+		<div id="mascotWrapper" class="relative flex items-center justify-center">
+
+		</div>
+	</div>
+
+</main>
+
+<style>
+    #content::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    #content::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+        border-radius: 10px;
+    }
+
+    #content::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        border: 3px solid #f1f1f1;
+    }
+    * {
+        scrollbar-width: thin;
+    }
+</style>
+</body>
+</html>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		const langSwitcher = document.querySelectorAll(".lang-switch");
+
+		langSwitcher.forEach((langBtn) => {
+			langBtn.addEventListener("click", (e) => {
+				const selectedLang = e.target.id === "lang-en" ? "en" : "fr";
+				const currentPath = window.location.pathname;
+				const hasFr = currentPath.startsWith("/fr/");
+				const hasEn = currentPath.startsWith("/en/");
+				let newPath = currentPath;
+
+				if (hasFr) {
+					newPath = currentPath.replace("/fr/", `/${selectedLang}/`);
+				} else if (hasEn) {
+					newPath = currentPath.replace("/en/", `/${selectedLang}/`);
+				} else {
+					newPath = `/${selectedLang}${currentPath}`;
+				}
+				document.documentElement.lang = selectedLang;
+				window.location.href = newPath;
+				//window.location.reload();
+			});
+		});
+	});
+</script>

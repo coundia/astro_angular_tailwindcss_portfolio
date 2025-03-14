@@ -6,13 +6,15 @@ import { NgIf } from "@angular/common";
 	selector: "contact",
 	standalone: true,
 	template: `
-		<div class="w-full md:max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
-			<h2 class="text-2xl font-semibold text-center mb-6">Contactez-nous</h2>
-
+		<div class="w-full md:max-w-4xl mx-auto p-6  shadow-lg rounded-lg">
+			<p class="text-gray-600 text-center mb-6">
+				Je suis ravis de vous entendre ! Remplissez ce formulaire pour m'envoyer vos questions,
+				commentaires ou suggestions, meme de façon anonyme. Je vais vous répondre dans les plus brefs délais.
+			</p>
 			<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
 				<div class="flex gap-4 flex-col md:flex-row">
 					<div class="w-full ">
-						<label class="block font-medium text-gray-700">Nom et Prénom</label>
+						<label class="block font-medium">Nom et Prénom</label>
 						<input
 								type="text"
 								formControlName="name"
@@ -21,7 +23,7 @@ import { NgIf } from "@angular/common";
 						/>
 					</div>
 					<div class="w-full ">
-						<label class="block font-medium text-gray-700">Email</label>
+						<label class="block font-medium">Email</label>
 						<input
 								type="email"
 								formControlName="email"

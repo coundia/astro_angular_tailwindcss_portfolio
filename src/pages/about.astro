@@ -1,11 +1,11 @@
 ---
-import Layout from '../../layouts/Layout.astro'
-import {experiences, education, skills, publications} from '../../data/cv'
-import CvTimeline from '../../components/ui/CvTimeline.astro'
+import Layout from '../layouts/Layout.astro'
+import {experiences, education, skills, publications} from '../data/cv'
+import CvTimeline from '../components/ui/CvTimeline.astro'
 
-import type {Experience, Education, Publication} from '../../types/cv'
-import List from '../../components/ui/List.astro'
-import PublicationsList from '../../components/ui/PublicationsList.astro'
+import type {Experience, Education, Publication} from '../types/cv'
+import List from '../components/ui/List.astro'
+import PublicationsList from '../components/ui/PublicationsList.astro'
 
 let orderdExperiences: Experience[] = []
 let orderdEducations: Education[] = []

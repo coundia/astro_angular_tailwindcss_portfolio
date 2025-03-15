@@ -35,7 +35,7 @@ export class NavbarComponent implements OnInit {
 	}
 
 	async checkBlogCollection() {
-		const collection = await getCollection("BlogPosts");
+		const collection = await getCollection("blog");
 		this.isBlogPopulated = collection.length > 0;
 	}
 }

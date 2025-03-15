@@ -6,9 +6,10 @@ import {getCollection, render} from 'astro:content'
 export async function getStaticPaths(): Promise<Array<{ params: { slug: string }, props: { post: any } }>> {
     const blogEntries = await getCollection("blog");
 
-    const posts = blogEntries
+
+	const posts = blogEntries
         .map(post => {
-        const slug = post.id
+			const slug = post.slug || post.id.replace(/\.(md|mdx)$/, "");
             return {
             params: { slug },
             props: { post },

@@ -6,7 +6,7 @@ import ProfilePictures from '@/assets/coundia.png'
 import { getCollection } from 'astro:content'
 import { template } from '../../data/settings'
 import DarkLightController from "./DarkLightController.astro";
-import {LangSwitcherComponent} from '@/components/LangSwitcherComponent'
+import {LangSwitcherComponent} from '../langSwitcher/LangSwitcherComponent'
 
 const isBlogPopulated = await getCollection('blog').then(collection => collection.length > 0)
 
@@ -30,8 +30,6 @@ const {
 	contact,
 	blog
 } = titles.fr;
-
-console.log("Blog Collection:", await getCollection('blog'));
 
 ---
 

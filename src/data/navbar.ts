@@ -5,7 +5,7 @@ export  const titles = {
 		projects: "Projects",
 		skills: "Skills",
 		about: "About",
-		contact: "Contact",
+		contact: "contact",
 		blog: "Blog"
 	},
 	fr: {
@@ -13,7 +13,7 @@ export  const titles = {
 		projects: "Projets",
 		skills: "Compétences",
 		about: "À propos",
-		contact: "Contact",
+		contact: "contact",
 		blog: "Blog"
 	}
 }

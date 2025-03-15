@@ -25,7 +25,7 @@ export class NavbarComponent implements OnInit {
 	projects: string = 'Projects';
 	skills: string = 'Skills';
 	about: string = 'About';
-	contact: string = 'Contact';
+	contact: string = 'contact';
 	blog: string = 'Blog';
 
 	constructor() {}

@@ -1,0 +1,63 @@
+version: "3"
+
+tasks:
+  install:
+    desc: "Install dependencies"
+    cmds:
+      - npm install
+
+  dev:
+    desc: "Run Astro in development mode"
+    cmds:
+      - npm run dev
+    sources:
+      - "**/*.astro"
+      - "**/*.ts"
+      - "**/*.js"
+      - "package.json"
+
+  build:
+    desc: "Build Astro for production"
+    cmds:
+      - npm run build
+    sources:
+      - "**/*.astro"
+      - "**/*.ts"
+      - "**/*.js"
+      - "package.json"
+
+  preview:
+    desc: "Preview the built Astro site"
+    cmds:
+      - npm run preview
+
+  clean:
+    desc: "Remove cache and output directories"
+    cmds:
+      - rm -rf .astro cache node_modules/.cache dist
+
+  sync:
+    desc: "Sync Astro collections"
+    cmds:
+      - npm run astro sync
+
+  update:
+    desc: "Update all dependencies"
+    cmds:
+      - npm update
+
+  lint:
+    desc: "Run ESLint and Prettier"
+    cmds:
+      - npx eslint --fix .
+      - npx prettier --write .
+
+  format:
+    desc: "Format code using Prettier"
+    cmds:
+      - npx prettier --write .
+
+  check:
+    desc: "Run Astro check for errors"
+    cmds:
+      - npx astro check

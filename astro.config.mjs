@@ -23,7 +23,7 @@ export default defineConfig({
     ],
     vite: {
         ssr: {
-            noExternal: ['@rx-angular/**'],
+            noExternal: ['@rx-angular/**', 'astro', '@astrojs/mdx'],
         },
     },
     site: template.website_url,

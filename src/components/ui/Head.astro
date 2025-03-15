@@ -54,12 +54,12 @@ const { title, description, image } = Astro.props
 
   // Apply theme immediately to prevent flash
   const theme = getStoredTheme();
-  document.documentElement.setAttribute('data-theme', theme);
+  document.documentElement.setAttribute('cv-theme', theme);
 
   // Re-apply theme after navigation
   document.addEventListener('astro:after-swap', () => {
     const currentTheme = getStoredTheme();
-    document.documentElement.setAttribute('data-theme', currentTheme);
+    document.documentElement.setAttribute('cv-theme', currentTheme);
   });
 
   import { themeChange } from 'theme-change'

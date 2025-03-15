@@ -48,5 +48,5 @@ export default {
         utils: true,
         exclude: ["scrollbar"]
     },
-   darkMode: ['selector', '[data-theme="synthwave"]']
+   darkMode: ['selector', '[cv-theme="synthwave"]']
 };

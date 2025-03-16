@@ -2,20 +2,21 @@
 import { Image } from 'astro:assets'
 import SocialIcons from './SocialIcons.astro'
 
+import { HomeFr } from '@/data/HomeFr'
+
 const { fullName, title, institute, profilePicture } = Astro.props
+
 ---
 
 <div class="flex-1">
   <h1 class="text-5xl font-bold mb-6">
-    Hey, I'm <span class="text-secondary">{fullName}</span> 👋
+    <span class="text-primary">{fullName}</span>
   </h1>
   <p class="text-2xl text-gray-500 mb-4">
-    {title} {institute ? `at ${institute}` : ''}
+    {title} {institute ? `, ${institute}` : ''}
   </p>
   <p class="text-lg text-gray-700 mb-6">
-    Passionate about building high-performance web applications with <span class="font-semibold">Angular, Tailwind, and Web3</span>.
-    Experienced in <span class="font-semibold">PHP (Symfony)</span> and <span class="font-semibold">Java (Spring Boot)</span>.
-    I thrive in complex architectures like <span class="font-semibold">DDD, CQRS, and microservices</span>.
+    {HomeFr.presentation}
   </p>
   <div class="flex gap-4">
     <SocialIcons />
@@ -25,6 +26,6 @@ const { fullName, title, institute, profilePicture } = Astro.props
   <Image
       src={profilePicture}
       alt={fullName}
-      class="w-full h-full rounded-full border-4 border-secondary shadow-lg"
+      class="w-full h-full rounded-full border-4 border-primary shadow-lg"
   />
 </div>

@@ -8,9 +8,9 @@ export const profile = {
 
 export const social = {
 	email: "papacoundia@gmail.com",
-	linkedin: "https://linkedin.com/in/papacoundia",
-	x: "https://www.x.com/",
-	github: "",
+	linkedin: "https://linkedin.com/in/pcoundia",
+	x: "https://www.x.com/coundia",
+	github: "https://www.github.com/coundia",
 	gitlab: "",
 	scholar: "",
 	inspire: "",
@@ -29,8 +29,8 @@ export const template = {
 };
 
 export const seo = {
-	default_title: "Astro Academia",
-	default_description: "Astro Academia is a template for academic websites.",
-	default_image: "/images/astro-academia.png"
+	default_title: "Papa Coundia",
+	default_description: "Papa Coundia, informaticien.",
+	default_image: "coundia.png"
 };
 

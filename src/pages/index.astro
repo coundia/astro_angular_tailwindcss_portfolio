@@ -1,14 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro'
 
-import { profile } from '../data/settings'
-import { publications } from '../data/cv'
+import { Projects } from '../data/Projects'
+import { Services } from '../data/Services'
+import { CvFr } from '../data/CvFr'
 import ProfilePictures from '../assets/coundia.png'
 import Hero from '../components/ui/Hero.astro'
 import Grid from '../components/ui/Grid.astro'
 import ArticleList from '../components/ui/ArticleList.astro'
+import {HomeFr} from "../data/HomeFr";
 
-const { fullName, title, institute, research_areas } = profile
+const { fullName, title, institute } = CvFr.person
 
 ---
 
@@ -23,13 +25,11 @@ const { fullName, title, institute, research_areas } = profile
 		/>
 	</section>
 
-	<!-- Research Areas -->
 	<section class='py-12 border-b'>
-		<Grid gridTitle='Research Areas' gridItems={research_areas} />
+		<Grid gridTitle={HomeFr.projects} gridItems={Projects} />
 	</section>
 
-	<!-- Recent Publications -->
 	<section class='py-12 border-t'>
-		<ArticleList listTitle='Recent Publications' listItems={publications} />
+		<ArticleList listTitle={HomeFr.services} listItems={Services} />
 	</section>
 </Layout>

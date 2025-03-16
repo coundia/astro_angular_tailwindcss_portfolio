@@ -10,14 +10,15 @@ interface Props {
 const {listTitle, listItems} = Astro.props
 ---
 
-<h2 class='text-3xl font-bold mb-8'>Recent Publications</h2>
+<h2 class='text-3xl font-bold mb-8'>{listTitle}</h2>
 <div class='space-y-6'>
 	{
 		listItems.map(item => (
 				<div class='p-6 rounded-lg text-base-content bg-base-200'>
 					<h3 class='text-xl font-semibold mb-2'>{item.title}</h3>
+					<h4 class='text-xl font-semibold mb-2'>{item.resume}</h4>
 					<p>
-						{item.journal} • {item.time}
+						{item.description}
 					</p>
 				</div>
 		))

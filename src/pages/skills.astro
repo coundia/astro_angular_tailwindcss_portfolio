@@ -1,89 +1,45 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import { experiences, education, skills, publications } from '../data/cv'
+import { CvFr} from '../data/CvFr'
 import CvTimeline from '../components/ui/CvTimeline.astro'
 
-import type { Experience, Education, Publication } from '../types/cv'
 import List from '../components/ui/List.astro'
-import PublicationsList from '../components/ui/PublicationsList.astro'
 
-let orderdExperiences: Experience[] = []
-let orderdEducations: Education[] = []
-let orderedPublications: Publication[] = []
+const { experiences, formations, certifications } = CvFr;
 
-const orderElement = <T extends { time: string }>(a: T, b: T) => {
-  const presentValues = ['present', 'now', 'current', 'today']
-  if (
-			presentValues.includes(
-				(a['time'] as string)?.split(' - ')[1]?.toLowerCase()
-			)
-		) {
-			// If the date is 'present', it should be the first element
-			return -1
-		}
-		const dateA = new Date((a['time'] as string)?.split(' - ')[1])
-		const dateB = new Date((b['time'] as string)?.split(' - ')[1])
-		return dateB.getTime() - dateA.getTime()
-}
 
-if (experiences.length > 0) {
-	orderdExperiences = experiences.sort((a, b) => {
-		return orderElement(a, b)
-	})
-}
-
-if (education.length > 0) {
-	orderdEducations = education.sort((a, b) => {
-		return orderElement(a, b)
-	})
-}
-
-if (publications.length > 0) {
-	orderedPublications = publications.sort((a, b) => {
-		return orderElement(a, b)
-	})
-}
 ---
 
 <Layout>
 	{
-		orderdEducations.length > 0 && (
+		experiences.length > 0 && (
+					<section class='mb-12'>
+						<h2 class='text-2xl font-bold mb-6 border-b pb-2'>
+							Experiences
+						</h2>
+						<CvTimeline elements={experiences} colored={true} />
+					</section>
+		)
+	}
+	{
+		formations.length > 0 && (
 			<section class='mb-12'>
 				<h2 class='text-2xl font-bold mb-6 border-b pb-2'>
-					Education
+					Formations
 				</h2>
-				<CvTimeline elements={orderdEducations} colored={true} />
+				<CvTimeline elements={formations} colored={true} />
 			</section>
+		)
+	}
+	{
+		certifications.length > 0 && (
+					<section class='mb-12'>
+						<h2 class='text-2xl font-bold mb-6 border-b pb-2'>
+							Certifications
+						</h2>
+						<CvTimeline elements={certifications} colored={true} />
+					</section>
 		)
 	}
 
-	{
-		orderdExperiences.length > 0 && (
-			<section class='mb-12'>
-				<h2 class='text-2xl font-bold mb-6 border-b pb-2'>
-					Experiences
-				</h2>
-				<CvTimeline elements={orderdExperiences} colored={true} />
-			</section>
-		)
-	}
-
-	{
-		orderdEducations.length > 0 && (
-			<section class='mb-12'>
-				<h2 class='text-2xl font-bold mb-6 border-b pb-2'>
-					Last publications
-				</h2>
-				<PublicationsList elements={orderedPublications}/>
-			</section>
-		)
-	}
-
-	{
-		skills.length > 0 && (
-			<section class='mb-12'>
-				<List listTitle='Skills' listItems={skills}/>
-			</section>
-		)
-	}
 </Layout>

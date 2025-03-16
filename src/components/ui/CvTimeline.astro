@@ -1,13 +1,12 @@
 ---
 import { isExperience } from '@/types/cv';
-import type { Experience, Education } from '@/types/cv';
-
-interface Props {
-	elements: (Experience | Education)[]
-	colored: boolean
-}
 
 const { elements, colored } = Astro.props
+
+const getValidUrl = (url: string) => {
+	return url.startsWith("http://") || url.startsWith("https://") ? url : `https://${url}`;
+};
+
 ---
 
 <ul
@@ -34,10 +33,18 @@ const { elements, colored } = Astro.props
 					class={`${index - (1 % 2) ? 'timeline-start' : 'timeline-end'} mb-10 md:text-end`}
 				>
 					<time class='font-mono italic'>{element.time}</time>
-					<div class='text-lg font-black'>{isExperience(element) ? element.title : element.degree}</div>
-					<div>{element.description}</div>
-					<div>{isExperience(element) ? element.company : element.school}</div>
-					<div>{element.location}</div>
+					<div class='text-lg font-black'>{element.title}</div>
+					<div class='text-lg font-black'>{element.location}</div>
+
+					{
+						element.description.map((desc, index) =>(<div class=''>{desc}</div>))
+
+					}
+					<div class="card-actions justify-end mt-4">
+						<a href={getValidUrl(element.link)} target="_blank" class="btn btn-sm btn-primary text-secondary-content">
+							Lire plus
+						</a>
+					</div>
 				</div>
         <hr class:list={[{ 'bg-accent': colored }]} />
 			</li>

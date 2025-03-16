@@ -27,27 +27,20 @@ Il s'intègre parfaitement avec Symfony Messenger pour gérer les commandes et r
 
 ## Installation
 
-Ajoutez le bundle à votre projet Symfony via Composer :
+### Creation du projet Symfony
 
-	composer create-project symfony/skeleton:"7.2.x" my_project_directory
+	composer create-project symfony/skeleton demo
+	cd demo
+	composer require webapp
+	composer require nelmio/cors-bundle
+	composer require nelmio/api-doc-bundle
+
+Pour plus de details voir : [https://symfony.com/doc/current/setup.html](https://symfony.com/doc/current/setup.html)
+
+### Installation du bundle ddd
 
     composer require cnd/ddd-maker-bundle --dev
 
-
-Si vous développez localement, ajoutez un dépôt de chemin dans `composer.json` :
-
-```json
-{
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../ddd-maker-bundle"
-        }
-    ],
-    "require": {
-        "cnd/ddd-maker-bundle": "*"
-    }
-}
 ```
 
 Assurez-vous que le bundle est activé dans `config/bundles.php` :

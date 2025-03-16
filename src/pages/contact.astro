@@ -6,13 +6,17 @@ import List from "../components/ui/List.astro";
 
 import {HelloComponent} from '../components/hello/HelloComponent';
 import {ContactComponent} from "@/components/contact/ContactComponent";
-
+import SocialIcons from '@/components/ui/SocialIcons.astro'
 const helpText = "Helping binding";
 ---
 
 <Layout title=`Contact ${CvFr.person.fullName}`>
 	<div class="flex justify-center items-center flex-col max-w-none">
 		<h1 class="text-3xl font-bold mb-8">Contactez - moi</h1>
+
+		<div class="flex gap-4">
+			<SocialIcons />
+		</div>
 
 		<ContactComponent client:visible  name="Max"/>
 

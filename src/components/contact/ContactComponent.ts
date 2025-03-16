@@ -11,7 +11,6 @@ import { NgIf } from "@angular/common";
 				Je suis ravis de vous entendre! Envoyer vos questions,
 				commentaires ou suggestions. Je vais vous répondre dans les plus brefs délais.
 			</p>
-			 
 			
 			<form  *ngIf="enabled_contact" [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
 				<div class="flex gap-4 flex-col md:flex-row">

@@ -16,8 +16,11 @@ export async function getStaticPaths(): Promise<Array<{ params: { slug: string }
 		})
 }
 const {post} = Astro.props;
-const { title, date, tags} = post.data; 
+const { title, date, tags, author, link} = post.data;
 const { Content } = await render(post);
+const getValidUrl = (url: string) => {
+	return url.startsWith("http://") || url.startsWith("https://") ? url : `https://${url}`;
+};
 ---
 
 <Layout title={title}>
@@ -83,6 +86,14 @@ const { Content } = await render(post);
          prose-img:rounded-lg prose-img:my-8'
         >
                 <Content />
+			</div>
+			<div class="m-10">
+				Auteur: {author}
+				<div class="card-actions justify-end mt-4">
+					<a href={getValidUrl(link)} target="_blank" class="btn btn-sm btn-primary text-secondary-content">
+						Lire plus
+					</a>
+				</div>
 			</div>
 		</article>
 	</div>

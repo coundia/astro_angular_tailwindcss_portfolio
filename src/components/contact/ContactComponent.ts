@@ -8,10 +8,12 @@ import { NgIf } from "@angular/common";
 	template: `
 		<div class="w-full md:max-w-4xl mx-auto p-6  shadow-lg rounded-lg">
 			<p class="text-gray-600 text-center mb-6">
-				Je suis ravis de vous entendre ! Remplissez ce formulaire pour m'envoyer vos questions,
-				commentaires ou suggestions, même de façon anonyme. Je vais vous répondre dans les plus brefs délais.
+				Je suis ravis de vous entendre! Envoyer vos questions,
+				commentaires ou suggestions. Je vais vous répondre dans les plus brefs délais.
 			</p>
-			<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
+			 
+			
+			<form  *ngIf="enabled_contact" [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
 				<div class="flex gap-4 flex-col md:flex-row">
 					<div class="w-full ">
 						<label class="block font-medium">Nom et Prénom</label>
@@ -70,6 +72,7 @@ export class ContactComponent {
 
 	submitted = false;
 	loading = false;
+	enabled_contact = false;
 
 	onSubmit() {
 		if (this.contactForm.valid) {

@@ -7,6 +7,7 @@ import mdx from "@astrojs/mdx";
 import {template} from "./src/data/settings.js"
 
 export default defineConfig({
+
     integrations: [
         tailwind(),
         sitemap(),

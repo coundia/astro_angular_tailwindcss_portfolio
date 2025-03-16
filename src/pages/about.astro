@@ -5,12 +5,19 @@ import CvTimeline from '../components/ui/CvTimeline.astro'
 
 import List from '../components/ui/List.astro'
 
-const { experiences, formations, certifications } = CvFr;
+const { experiences, formations, certifications,person } = CvFr;
 
 
 ---
 
-<Layout>
+<Layout title=`A propos de ${CvFr.person.fullName}`>
+
+	<section class='mb-12 m-10'>
+		<h2 class='text-2xl font-bold mb-6 border-b pb-2'>
+			A propos de {person.fullName}
+		</h2>
+		{person.infos}
+	</section>
 	{
 		experiences.length > 0 && (
 					<section class='mb-12'>

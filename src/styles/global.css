@@ -1,0 +1,26 @@
+:root {
+    --shiki-light: #24292e;
+    --shiki-light-bg: #f6f8fa;
+    --shiki-dark: #c9d1d9;
+    --shiki-dark-bg: #0d1117;
+    --shiki-font-style: normal;
+    --shiki-font-weight: normal;
+    --shiki-text-decoration: none;
+}
+
+.astro-code,
+.astro-code span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+    font-style: var(--shiki-font-style) !important;
+    font-weight: var(--shiki-font-weight) !important;
+    text-decoration: var(--shiki-text-decoration) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    .astro-code,
+    .astro-code span {
+        color: var(--shiki-dark) !important;
+        background-color: var(--shiki-dark-bg) !important;
+    }
+}

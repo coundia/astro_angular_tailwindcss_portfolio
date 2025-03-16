@@ -1,19 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import {profile} from "../data/settings";
+import {CvFr} from "../data/CvFr";
 import BetterIcon from "../components/ui/BetterIcon.astro";
 import List from "../components/ui/List.astro";
-import {RESEARCH_ICONS} from "../data/researchIcons";
-
-const {research_areas} = profile;
 
 import {HelloComponent} from '../components/hello/HelloComponent';
-import {ContactComponent} from "../components/./contact/ContactComponent";
+import {ContactComponent} from "@/components/contact/ContactComponent";
 
 const helpText = "Helping binding";
 ---
 
-<Layout title="Research | Dr. Marie Curie">
+<Layout title=`Contact ${CvFr.person.fullName}`>
 	<div class="flex justify-center items-center flex-col max-w-none">
 		<h1 class="text-3xl font-bold mb-8">Contactez - moi</h1>
 

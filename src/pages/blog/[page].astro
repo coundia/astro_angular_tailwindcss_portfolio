@@ -5,6 +5,7 @@ import { trimExcerpt } from '../../lib/utils';
 import { template } from '../../data/settings';
 import { getCollection } from 'astro:content';
 import { getRelativeLocaleUrl } from 'astro:i18n';
+import {CvFr} from "../../data/CvFr";
 
 export async function getStaticPaths({ paginate }) {
 	const blogEntries = await getCollection('blog');
@@ -29,9 +30,9 @@ const { page } = Astro.props;
 const blogRt = getRelativeLocaleUrl("fr", "blog");
 ---
 
-<Layout title="Blog">
+<Layout title=`Blog de ${CvFr.person.fullName}`>
 	<div>
-		<h1 class="text-3xl font-bold mb-8">Blog Posts</h1>
+		<h1 class="text-3xl font-bold mb-8">Blog </h1>
 		<div class="grid gap-8">
 			{page.data.map(post => (
 					<article class="card bg-base-200 transition-all">

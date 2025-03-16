@@ -5,12 +5,18 @@ export  const CvFr = {
 			fullName: "Papa Coundia",
 			title: "Consultant en informatique",
 			institute: "Indépendant",
-			research_areas: "Tech"
+			research_areas: "Tech",
+			infos: "Diplômé d'un master 2 en informatique avec plus de 5 ans d'expérience je peux intervenir dans ces domaines d'activité: " +
+				" analyse et Conception," +
+				" développement front  (HTML, CSS," +
+				"JavaScript), " +
+				" développement back-end (Php, Java )," +
+				" tests et qualité logiciel (Selenium, Jmeter)  etc.."
 		},
 		experiences: [
 			{
 				location: "Thiès (Sénégal)",
-				time: "Mars 2025- Actuellement",
+				time: "Juin 2022- Actuellement",
 				title: "Consultant IT",
 				description: [
 				],
@@ -28,9 +34,34 @@ export  const CvFr = {
 				link:"https://www.devalto.com/"
 			},
 			{
+				location: "ATPS, (Sénégal)",
+				time: "Mai 2019- Juin 2022",
 				title: "Développeur WEB",
+				description: [
+					"Participer au développement d’un micro framework exposant les services de transfert, recharge et encaissement",
+					"Participer au développement et maintenance des plateformes existantes :" +
+					"Webservices fournis aux partenaires [SOAP et REST]",
+					"Upay App : Application mobile permettant de payer, encaisser, envoyer ou recevoir de l'argent.",
+					"Upay Business : Application Web permettant de payer des salaires et de faire des collectes.",
+					"Proximo : Plateforme Web permettant de payer, encaisser, envoyer ou recevoir de l'argent",
+					"Technologies: PHP, Spring boot, Javascript etc..",
+				],
+				link:"https://www.atps.africa/"
+			},
+			{
+				title: "Développeur WEB",
+				location: "MONEY-EXPRESS DU Groupe CHAKA",
+				time: "Mars 2018- Mai 2019",
+				description: [
+					"Participer au développement d'une plate-forme marque blanche de transfert d'argent.",
+					"Technologies: PHP(Symfony), Javascript (Angular)"
+				],
+				link:""
+			},
+			{
+				title: "Stagiaire",
 				location: "Université de Thiès - DSOS (Sénégal)",
-				time: "2020",
+				time: "Dec 2017- Mai 2018",
 				description: [
 					"Participer à l'inscription des étudiants via une plate-forme interne.",
 					"Participer au développement d'une plateforme d'inscription en ligne.",
@@ -39,7 +70,7 @@ export  const CvFr = {
 				link:"https://www.univ-thies.sn/"
 			},
 			{
-				location: "SEYSOO SARL, Sénégal",
+				location: "SEYSOO SARL, (Sénégal)",
 				time: "2019 - 2020",
 				title: "Stagiaire",
 				description: [

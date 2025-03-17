@@ -38,7 +38,8 @@ server {
 
     # Gestion des routes Angular
     location / {
-        try_files \\\$uri \\\$uri /index.html;
+        index index.html;
+        try_files \\\$uri \\\$uri \\\$uri/index.html /index.html;
     }
 
     error_log /var/log/nginx/$DOMAIN.error.log;

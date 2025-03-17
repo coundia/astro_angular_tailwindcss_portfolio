@@ -58,6 +58,13 @@ jobs:
           # Test de connexion SSH
           ssh -o StrictHostKeyChecking=no "$SERVER_USER@$SERVER_IP" "echo 'SSH connection successful'"
           
+          sudo chmod -R 777 /var/www/pcoundia.com
+          sudo chown -R $USER:$USER /var/www/pcoundia.com
+
           # Déploiement avec rsync
-          rsync -avz --delete dist/ "$SERVER_USER@$SERVER_IP:$SERVER_PATH"
+          
+          rsync -avz --no-perms --no-times --delete dist/ "$SERVER_USER@$SERVER_IP:$SERVER_PATH"
+          
+          sudo chown -R www-data:www-data /var/www/pcoundia.com
+
 

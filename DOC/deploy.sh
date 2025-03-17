@@ -36,8 +36,9 @@ server {
     include /etc/letsencrypt/options-ssl-nginx.conf;
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 
+    # Gestion des routes Angular
     location / {
-        try_files \\\$uri /index.html;
+        try_files \\\$uri \\\$uri /index.html;
     }
 
     error_log /var/log/nginx/$DOMAIN.error.log;

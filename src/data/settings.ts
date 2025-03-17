@@ -8,6 +8,9 @@ export const profile = {
 
 export const social = {
 	email: "papacoundia@gmail.com",
+	emailPro: "contact@pcoundia.com",
+	fix: "+22177339517559",
+	phone: "+221775392482",
 	linkedin: "https://linkedin.com/in/pcoundia",
 	x: "https://www.x.com/coundia",
 	github: "https://www.github.com/coundia",

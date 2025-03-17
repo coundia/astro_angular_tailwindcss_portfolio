@@ -14,6 +14,9 @@ sudo apt install -y curl software-properties-common unzip git nginx certbot pyth
 echo "🛠️ Génération du certificat SSL avant la configuration de Nginx..."
 sudo certbot certonly --standalone -d $DOMAIN -d www.$DOMAIN --non-interactive --agree-tos -m admin@$DOMAIN
 
+sudo rm /etc/nginx/sites-available/$DOMAIN
+sudo rm /etc/nginx/sites-enabled/$DOMAIN
+
 echo "🔧 Configuration de Nginx pour $DOMAIN..."
 sudo bash -c "cat > /etc/nginx/sites-available/$DOMAIN <<EOF
 server {
@@ -25,7 +28,7 @@ server {
 server {
     listen 443 ssl;
     server_name $DOMAIN www.$DOMAIN;
-    root $PROJECT_DIR/dist;
+    root $PROJECT_DIR;
     index index.html;
 
     ssl_certificate /etc/letsencrypt/live/$DOMAIN/fullchain.pem;

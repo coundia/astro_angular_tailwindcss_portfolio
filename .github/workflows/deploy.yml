@@ -43,10 +43,9 @@ jobs:
           SERVER_IP: ${{ secrets.SERVER_IP }}
           SERVER_PATH: "/var/www/pcoundia.com/"
         run: |
-          echo $SERVER_IP
-          echo $SERVER_USER
-          sudo mkdir -p ~/.ssh
-          sudo echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-          sudo chmod 600 ~/.ssh/id_rsa
-          sudo ssh-keyscan -H "$SERVER_IP" >> ~/.ssh/known_hosts
-          sudo rsync -avz --delete dist/ "$SERVER_USER@$SERVER_IP:$SERVER_PATH"
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" | tee ~/.ssh/id_rsa > /dev/null
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H "$SERVER_IP" >> ~/.ssh/known_hosts
+          rsync -avz --delete dist/ "$SERVER_USER@$SERVER_IP:$SERVER_PATH"
+      

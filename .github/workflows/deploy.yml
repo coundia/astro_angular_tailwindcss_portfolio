@@ -12,8 +12,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: npm install
+      - name: Clean install dependencies
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install
 
       - name: Build Astro project
         run: npm run build
@@ -22,24 +24,27 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: astro-build
-          path: dist
+          path: dist/
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Download build artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: astro-build
-          path: dist
+          path: dist/
 
       - name: Deploy to OVH Server
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+          SERVER_PATH: "/var/www/pcoundia.com/"
         run: |
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H 37.187.39.2 >> ~/.ssh/known_hosts
-          rsync -avz --delete dist/ user@37.187.39.2:/var/www/pcoundia.com/
+          ssh-keyscan -H "$SERVER_IP" >> ~/.ssh/known_hosts
+          rsync -avz --delete dist/ "$SERVER_USER@$SERVER_IP:$SERVER_PATH"

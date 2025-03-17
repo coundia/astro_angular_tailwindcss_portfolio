@@ -57,9 +57,6 @@ jobs:
           
           # Test de connexion SSH
           ssh -o StrictHostKeyChecking=no "$SERVER_USER@$SERVER_IP" "echo 'SSH connection successful'"
-          
-          sudo chmod -R 777 /var/www/pcoundia.com
-          sudo chown -R $USER:$USER /var/www/pcoundia.com
 
           # Déploiement avec rsync
           

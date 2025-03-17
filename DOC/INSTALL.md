@@ -1,6 +1,8 @@
 npm create astro@latest -- --template astro-academia
+
 or
-blog
+
+npm create astro@latest -- --template blog
 
 
 npx astro add @analogjs/astro-angular

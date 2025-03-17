@@ -1,7 +1,3 @@
-Act as expert in tailwindCSS and UI/UX
-
-improve this code with astro and tailwindcss and fix it and give all fixed code
-improve this code with astro and tailwindcss and fix it and give all fixed code , add multi langue fr/en on top
 
 Ton portfolio doit refléter ton expertise et ton style. Voici un menu optimisé pour ton profil :
 

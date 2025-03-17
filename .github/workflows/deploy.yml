@@ -59,9 +59,7 @@ jobs:
           ssh -o StrictHostKeyChecking=no "$SERVER_USER@$SERVER_IP" "echo 'SSH connection successful'"
 
           # Déploiement avec rsync
-          
           rsync -avz --no-perms --no-times --delete dist/ "$SERVER_USER@$SERVER_IP:$SERVER_PATH"
-          
-          sudo chown -R www-data:www-data /var/www/pcoundia.com
 
-
+          # Changer les permissions directement sur le serveur
+          ssh "$SERVER_USER@$SERVER_IP" "sudo chown -R www-data:www-data /var/www/pcoundia.com"

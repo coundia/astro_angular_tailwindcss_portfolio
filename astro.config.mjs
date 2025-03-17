@@ -29,6 +29,8 @@ export default defineConfig({
     },
     site: template.website_url,
     base: template.base,
+    output: 'static',
+    publicDir: 'public',
     i18n: {
         locales: [
             "fr",

@@ -21,7 +21,7 @@ export const social = {
 };
 
 export const template = {
-	website_url: "https://localhost:4321",
+	website_url: "https://www.pcoundia.com",
 	menu_left: false,
 	transitions: true,
 	lightTheme: "light",

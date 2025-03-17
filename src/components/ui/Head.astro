@@ -12,6 +12,8 @@ const siteURL = Astro.site || 'https://default-site.com';
 const pageURL = new URL(Astro.url.pathname, siteURL);
 
 const { title, description } = Astro.props;
+// import fav from '../../../public/favicon.ico'
+import fav from '../../../public/favicon.ico'
 ---
 
 <!-- Base Meta Configuration -->
@@ -19,6 +21,7 @@ const { title, description } = Astro.props;
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
 
+<link rel="icon" href={fav} />
 <!-- Sitemap -->
 <link rel="sitemap" href={`${template.base}/sitemap-index.xml`} />
 

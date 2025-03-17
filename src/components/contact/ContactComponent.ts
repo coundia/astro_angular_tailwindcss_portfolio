@@ -8,8 +8,9 @@ import { NgIf } from "@angular/common";
 	template: `
 		<div class="w-full md:max-w-4xl mx-auto p-6  shadow-lg rounded-lg">
 			<p class="text-gray-600 text-center mb-6">
-				Je suis ravis de vous entendre! Envoyer vos questions,
-				commentaires ou suggestions. Je vais vous répondre dans les plus brefs délais.
+				Envoyez vos questions, commentaires ou suggestions. 
+				Je m'engage à vous répondre dans les plus brefs délais. 
+				Je suis enthousiaste à l'idée d'un partenariat, et ensemble, nous réussirons !
 			</p>
 			
 			<form  *ngIf="enabled_contact" [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">

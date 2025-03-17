@@ -43,9 +43,21 @@ jobs:
           SERVER_IP: ${{ secrets.SERVER_IP }}
           SERVER_PATH: "/var/www/pcoundia.com/"
         run: |
+          # Vérification des variables
+          if [[ -z "$SSH_PRIVATE_KEY" || -z "$SERVER_USER" || -z "$SERVER_IP" ]]; then
+            echo "Error: Missing environment variables!"
+            exit 1
+          fi
+          
+          # Configuration de SSH
           mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY" | tee ~/.ssh/id_rsa > /dev/null
+          echo "$SSH_PRIVATE_KEY" | tr -d '\r' | tee ~/.ssh/id_rsa > /dev/null
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H "$SERVER_IP" >> ~/.ssh/known_hosts
+          
+          # Test de connexion SSH
+          ssh -o StrictHostKeyChecking=no "$SERVER_USER@$SERVER_IP" "echo 'SSH connection successful'"
+          
+          # Déploiement avec rsync
           rsync -avz --delete dist/ "$SERVER_USER@$SERVER_IP:$SERVER_PATH"
-      
+

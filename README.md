@@ -27,3 +27,5 @@ https://docs.astro.build/en/getting-started/
 https://analogjs.org/docs/packages/astro-angular/overview
 
 https://angular.dev/overview
+
+https://v3.tailwindcss.com/docs/installation

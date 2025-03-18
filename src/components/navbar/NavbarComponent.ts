@@ -40,8 +40,6 @@ export class NavbarComponent implements OnInit {
 
 		var real_path: string | undefined = window.location.pathname;
 
-		console.log(real_path,route)
-
 		if (real_path.includes("blog")) {
 			  real_path = "/blog/1"
 		}

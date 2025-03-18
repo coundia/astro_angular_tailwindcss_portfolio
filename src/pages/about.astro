@@ -4,6 +4,7 @@ import { CvFr} from '../data/CvFr'
 import CvTimeline from '../components/ui/CvTimeline.astro'
 
 import List from '../components/ui/List.astro'
+import {AnimatedTextComponent} from "../components/animation/AnimatedTextComponent";
 
 const { experiences, formations, certifications,person } = CvFr;
 
@@ -14,7 +15,7 @@ const { experiences, formations, certifications,person } = CvFr;
 
 	<section class='mb-12 m-10'>
 		<h2 class='text-2xl font-bold mb-6 border-b pb-2'>
-			A propos de {person.fullName}
+			<AnimatedTextComponent text= `A propos de ${person.fullName}`  timer=200 client:visible></AnimatedTextComponent>
 		</h2>
 		{person.infos}
 	</section>

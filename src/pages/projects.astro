@@ -4,6 +4,7 @@ import { Projects } from "../data/Projects";
 import {CvFr} from "../data/CvFr";
 import { highlightAuthor } from "../lib/utils";
 import {template} from "../data/settings";
+import {AnimatedTextComponent} from "../components/animation/AnimatedTextComponent";
 
 const getValidUrl = (url: string) => {
   return url.startsWith("http://") || url.startsWith("https://") ? url : `https://${url}`;
@@ -12,8 +13,9 @@ const getValidUrl = (url: string) => {
 
 <Layout title=`Projets ${CvFr.person.fullName}`>
   <div class="prose max-w-none">
-    <h1 class="text-3xl font-bold mb-8">Mes projets</h1>
-
+    <h1 class="text-3xl font-bold mb-8">
+      <AnimatedTextComponent text="Mes projets" timer=500 client:visible></AnimatedTextComponent>
+    </h1>
     <div class="space-y-8">
       {
         Projects.map((project) => (

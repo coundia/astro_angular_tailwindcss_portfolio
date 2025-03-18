@@ -7,12 +7,15 @@ import List from "../components/ui/List.astro";
 import {HelloComponent} from '../components/hello/HelloComponent';
 import {ContactComponent} from "@/components/contact/ContactComponent";
 import SocialIconsDetails from "../components/ui/SocialIconsDetails.astro";
+import {AnimatedTextComponent} from "../components/animation/AnimatedTextComponent";
 const helpText = "Helping binding";
 ---
 
 <Layout title=`Contact ${CvFr.person.fullName}`>
 	<div class="flex justify-center items-center flex-col max-w-none">
-		<h1 class="text-3xl font-bold mb-8">Contactez - moi</h1>
+		<h1 class="text-3xl font-bold mb-8">
+			<AnimatedTextComponent text= "Contactez - moi"  timer=200 client:visible></AnimatedTextComponent>
+		</h1>
 
 		<div class="flex gap-4">
 			<SocialIconsDetails />

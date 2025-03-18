@@ -1,11 +1,29 @@
 # Run dev
 
-task dev
+# Install task go 
+
+https://taskfile.dev/installation/
+
+###  macos
+
+`brew install go-task`
+
+# Run
+
+`task dev`
 
 # Build
 
-task build
+`task build`
 
-# Deployé ici via github action
+# Déployé via github action sur
 
 https://www.pcoundia.com
+
+# Lien utiles
+
+https://docs.astro.build/en/getting-started/
+
+https://analogjs.org/docs/packages/astro-angular/overview
+
+https://angular.dev/overview

@@ -14,7 +14,7 @@ export const Projects = [
 		link: "https://www.groupe2cs.com",
 	},
 	{
-		title: "Megastore SN",
+		title: "Co-funder Megastore SN",
 		logo: "megastore.png",
 		description: "Plateforme e-commerce proposant une large gamme de produits avec une boutique physique au Sénégal.",
 		resume: "E-commerce et magasin physique au Sénégal.",

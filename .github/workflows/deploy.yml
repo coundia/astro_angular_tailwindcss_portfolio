@@ -49,17 +49,19 @@ jobs:
             exit 1
           fi
           
-          # Configuration de SSH
+          # Configuration of SSH
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" | tr -d '\r' | tee ~/.ssh/id_rsa > /dev/null
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H "$SERVER_IP" >> ~/.ssh/known_hosts
           
-          # Test de connexion SSH
+          # Test SSH
           ssh -o StrictHostKeyChecking=no "$SERVER_USER@$SERVER_IP" "echo 'SSH connection successful'"
-
-          # Déploiement avec rsync
-          rsync -avz --no-perms --no-times --delete dist/ "$SERVER_USER@$SERVER_IP:$SERVER_PATH"
-
-          # Changer les permissions directement sur le serveur
-          ssh "$SERVER_USER@$SERVER_IP" "sudo chown -R www-data:www-data /var/www/pcoundia.com"
+ 
+          rsync -avz --chown=www-data:www-data --chmod=755 --delete dist/ "$SERVER_USER@$SERVER_IP:$SERVER_PATH"
+ 
+          ssh "$SERVER_USER@$SERVER_IP" << 'EOF'
+            sudo find /var/www/pcoundia.com/ -type d -exec chmod 755 {} \;
+            sudo find /var/www/pcoundia.com/ -type f -exec chmod 644 {} \;
+            sudo chown -R www-data:www-data /var/www/pcoundia.com/
+          EOF

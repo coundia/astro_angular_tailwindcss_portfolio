@@ -1,6 +1,8 @@
-# start
+# Run dev
 
 task dev
+
+# Build
 
 task build
 

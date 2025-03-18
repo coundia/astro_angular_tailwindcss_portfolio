@@ -3,7 +3,7 @@ export  const CvFr = {
 			firstName: "Papa",
 			lastName: "Coundia",
 			fullName: "Papa Coundia",
-			title: "Développeur FullStack, Angular | PHP / JAVA .",
+			title: "Développeur FullStack, Javascript | PHP / JAVA .",
 			institute: "",
 			research_areas: "Tech",
 			infos: "Diplômé d'un master 2 en informatique avec plus de 5 ans d'expérience je peux intervenir dans ces domaines d'activité: " +

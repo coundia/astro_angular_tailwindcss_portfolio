@@ -4,7 +4,7 @@ export const HomeFr = {
 		'spécialisé dans la création d\'applications performantes et centrées sur' +
 		' l\'utilisateur avec Angular, Tailwind CSS et JavaScript.' +
 		' Mon expertise s\'étend également au back-end avec PHP (Symfony) et Java (Spring),' +
-		' ainsi qu\'aux architectures complexes comme DDD et CQRS. En tant que Consultant en informatique indépendant,' +
+		' ainsi qu\'aux architectures complexes comme DDD et CQRS. En tant que ingénieur en informatique,' +
 		' je suis disponible pour collaborer sur ' +
 		'de nouveaux projets stimulants et apporter ma passion pour le développement de solutions logicielles de qualité',
 	'projects': 'Projets',

@@ -17,10 +17,10 @@ const { fullName, title, institute, profilePicture } = Astro.props
    </span>
   </h1>
   <p class="text-2xl text-gray-500 mb-4 opacity-0 animate-fade-in-up delay-200">
-    <AnimatedTextComponent text= {title} timer=2000 client:visible></AnimatedTextComponent>
+    <AnimatedTextComponent text= {title} timer=500 client:visible></AnimatedTextComponent>
   </p>
   <p class="text-lg text-gray-700 mb-6">
-    <AnimatedTextComponent timer=100 text={HomeFr.presentation} client:visible></AnimatedTextComponent>
+    <AnimatedTextComponent timer=500 text={HomeFr.presentation} client:visible></AnimatedTextComponent>
   </p>
 
   <div class="flex gap-4 opacity-0 animate-fade-in-up delay-500">

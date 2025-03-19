@@ -36,7 +36,7 @@ jobs:
           name: astro-build
           path: dist/
 
-      - name: Deploy to test OVH Server
+      - name: Deploy to prod OVH Server
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
@@ -48,18 +48,22 @@ jobs:
             echo "Error: Missing environment variables!"
             exit 1
           fi
-          
+
           # Configure SSH for access
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" | tr -d '\r' | tee ~/.ssh/id_rsa > /dev/null
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H "$SERVER_IP" >> ~/.ssh/known_hosts
-          
+
           # Test SSH connection
           ssh -o StrictHostKeyChecking=no "$SERVER_USER@$SERVER_IP" "echo 'SSH connection successful'"
 
-          # Deploy to the test server
-          rsync -avz --chown=$SERVER_USER:www-data --chmod=775 --delete dist/ "$SERVER_USER@$SERVER_IP:$SERVER_PATH"
+          # Clear target directory on the server (optional but recommended)
+          ssh "$SERVER_USER@$SERVER_IP" "rm -rf $SERVER_PATH/*"
+
+          # Deploy to the production server
+          rsync -avzL --chown=$SERVER_USER:www-data --chmod=775 --delete dist/ "$SERVER_USER@$SERVER_IP:$SERVER_PATH" -v
+  
 
   selenium-test:
     runs-on: ubuntu-latest
@@ -112,15 +116,19 @@ jobs:
             echo "Error: Missing environment variables!"
             exit 1
           fi
-          
+
           # Configure SSH for access
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" | tr -d '\r' | tee ~/.ssh/id_rsa > /dev/null
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H "$SERVER_IP" >> ~/.ssh/known_hosts
-          
+
           # Test SSH connection
           ssh -o StrictHostKeyChecking=no "$SERVER_USER@$SERVER_IP" "echo 'SSH connection successful'"
 
+          # Clear target directory on the server (optional but recommended)
+          ssh "$SERVER_USER@$SERVER_IP" "rm -rf $SERVER_PATH/*"
+
           # Deploy to the production server
-          rsync -avz --chown=$SERVER_USER:www-data --chmod=775 --delete dist/ "$SERVER_USER@$SERVER_IP:$SERVER_PATH"
+          rsync -avzL --chown=$SERVER_USER:www-data --chmod=775 --delete dist/ "$SERVER_USER@$SERVER_IP:$SERVER_PATH" -v
+  

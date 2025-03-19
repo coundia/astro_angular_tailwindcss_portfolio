@@ -63,7 +63,7 @@ jobs:
 
   selenium-test:
     runs-on: ubuntu-latest
-
+    needs: deploy-on-test
     services:
       selenium-hub:
         image: selenium/hub:latest
@@ -84,6 +84,7 @@ jobs:
 
       - name: Run Selenium Tests
         env:
+          SELENIUM_HUB_URL: "http://localhost:4444/wd/hub"
           SERVER_URL: "https://test.pcoundia.com"  # Point to your test server URL
         run: |
           cd selenium-tests

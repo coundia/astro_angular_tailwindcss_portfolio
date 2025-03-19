@@ -49,19 +49,21 @@ jobs:
             exit 1
           fi
           
-          # Configuration of SSH
+          # Configure SSH for access
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" | tr -d '\r' | tee ~/.ssh/id_rsa > /dev/null
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H "$SERVER_IP" >> ~/.ssh/known_hosts
           
-          # Test SSH
+          # Test SSH connection
           ssh -o StrictHostKeyChecking=no "$SERVER_USER@$SERVER_IP" "echo 'SSH connection successful'"
- 
+
+          # Deploy to the test server
           rsync -avz --chown=$SERVER_USER:www-data --chmod=775 --delete dist/ "$SERVER_USER@$SERVER_IP:$SERVER_PATH"
+
   test:
     runs-on: ubuntu-latest
-    needs: build
+    needs: deploy-on-test
     steps:
       - name: Checkout Selenium Tests Repository
         run: |
@@ -69,13 +71,13 @@ jobs:
 
       - name: Run Selenium Tests
         env:
-          SERVER_URL: "https://pcoundia.com"
+          SERVER_URL: "https://test.pcoundia.com"  # Point to your test server URL
         run: |
           cd selenium-tests
           mvn clean test -Dapp.url=$SERVER_URL
 
   deploy-on-prod:
-    needs: build
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Download build artifacts
@@ -97,13 +99,14 @@ jobs:
             exit 1
           fi
           
-          # Configuration of SSH
+          # Configure SSH for access
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" | tr -d '\r' | tee ~/.ssh/id_rsa > /dev/null
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H "$SERVER_IP" >> ~/.ssh/known_hosts
           
-          # Test SSH
+          # Test SSH connection
           ssh -o StrictHostKeyChecking=no "$SERVER_USER@$SERVER_IP" "echo 'SSH connection successful'"
-          
+
+          # Deploy to the production server
           rsync -avz --chown=$SERVER_USER:www-data --chmod=775 --delete dist/ "$SERVER_USER@$SERVER_IP:$SERVER_PATH"

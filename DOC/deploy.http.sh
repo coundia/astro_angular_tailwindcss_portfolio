@@ -19,22 +19,13 @@ sudo rm /etc/nginx/sites-enabled/$DOMAIN
 
 echo "🔧 Configuration de Nginx pour $DOMAIN..."
 sudo bash -c "cat > /etc/nginx/sites-available/$DOMAIN <<EOF
-server {
-    listen 80;
-    server_name $DOMAIN www.$DOMAIN;
-    return 301 https://\$host\$request_uri;
-}
 
 server {
-    listen 443 ssl;
+    listen 80;
     server_name $DOMAIN www.$DOMAIN;
     root $PROJECT_DIR;
     index index.html;
 
-    ssl_certificate /etc/letsencrypt/live/$DOMAIN/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/$DOMAIN/privkey.pem;
-    include /etc/letsencrypt/options-ssl-nginx.conf;
-    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 
     # Gestion des routes Angular
     location / {

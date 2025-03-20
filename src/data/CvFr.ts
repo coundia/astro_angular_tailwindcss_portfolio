@@ -3,14 +3,14 @@ export  const CvFr = {
 			firstName: "Papa",
 			lastName: "Coundia",
 			fullName: "Papa Coundia",
-			title: "Développeur FullStack, Javascript | PHP / JAVA .",
+			title: "Développeur FullStack, Javascript [Angular] / Java [Spring boot] .",
 			institute: "",
 			research_areas: "Tech",
 			infos: "Diplômé d'un master 2 en informatique avec plus de 5 ans d'expérience je peux intervenir dans ces domaines d'activité: " +
 				" analyse et Conception," +
 				" développement front  (HTML, CSS," +
 				"JavaScript), " +
-				" développement back-end (Php, Java )," +
+				" développement back-end (Java )," +
 				" tests et qualité logiciel (Selenium, Jmeter)  etc.."
 		},
 		experiences: [

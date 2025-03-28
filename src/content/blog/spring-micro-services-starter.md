@@ -1,7 +1,7 @@
 # Starter Microservices Spring Cloud
 
 Dans cet article, je vous présente mon projet de starter microservices basé sur l’écosystème **Spring Cloud**, incluant **Eureka**, **Cloud Config**, **Gateway**, **Axon**, **RabbitMQ**, et **PostgreSQL**. L’objectif est de fournir un exemple de configuration et d’implémentation entièrement réactive et scalable.
-Dans un environnement 100% réactif avec WebFlux et R2DBC, les microservices communiquent entre eux de manière asynchrone,
+Dans un environnement 100% réactif avec **WebFlux** et **R2DBC**(Non bloquant), les microservices communiquent entre eux de manière asynchrone,
 ce qui permet de gérer un grand nombre de requêtes simultanées.
 
 Le project est modulaire et évolutif disponible dans ici :
@@ -32,6 +32,18 @@ Voici un aperçu de la structure du projet :
 - **Product-Query (Port 8091)** : Microservice pour gérer la consultation (Read) des produits.
 
 L’ensemble est orchestré par Docker ou Docker Compose pour une gestion simplifiée de l’infrastructure.
+## Architecture DDD
+
+Le projet est basé sur l'architecture **DDD** (Domain Driven Design) avec les couches suivantes :
+
+![ddd_layers.png](assets/ddd_layers.png)
+
+source: https://www.hibit.dev/posts/15/domain-driven-design-layers
+
+- **Domain Layer** : Contient les entités, les valeurs d’objet, les agrégats, les événements, les commandes, les gestionnaires de commandes, les spécifications, les services de domaine, etc.
+- **Application Layer** : Contient les services d’application, les gestionnaires de commandes, les gestionnaires de requêtes, les gestionnaires d’événements, etc.
+- **Infrastructure Layer** : Contient les implémentations des interfaces de persistance, les implémentations des interfaces de messagerie, les implémentations des interfaces de configuration, etc.
+- **Presentation Layer** : Contient les contrôleurs REST (@RestController)
 
 ## Services Principaux
 

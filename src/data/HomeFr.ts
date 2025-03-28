@@ -3,10 +3,10 @@ export const HomeFr = {
 	'presentation': 'Développeur expérimenté, ' +
 		'spécialisé dans la création d\'applications performantes et centrées sur' +
 		' l\'utilisateur avec Angular, CSS [Tailwind].' +
-		' Mon expertise s\'étend également au back-end Java (Spring), toutefois j\'ai dejà travaillé sur des projets avec PHP,' +
-		' ainsi qu\'aux architectures complexes comme DDD et CQRS. En tant que ingénieur en informatique,' +
-		' je suis disponible pour collaborer sur ' +
-		'de nouveaux projets stimulants et apporter ma passion pour le développement de solutions logicielles de qualité',
+		' Mon expertise s\'étend également au back-end Java (Spring), Travaillé sur des projets avec PHP,' +
+		' ainsi qu\'aux architectures comme DDD, CQRS etc.'+
+		' Disponible pour collaborer sur ' +
+		'de nouveaux projets stimulants et innovants qui apporte une valeur reel sur la société.',
 	'projects': 'Projets',
 	'services': 'Services',
 	'contact-me': 'Contactez-moi',

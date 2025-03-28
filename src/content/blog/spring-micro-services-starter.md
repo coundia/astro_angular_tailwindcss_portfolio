@@ -1,3 +1,13 @@
+---
+title: "Starter Microservices Spring Cloud"
+date: "2025-03-28"
+tags: ["Java", "DDD", "CQRS", "Spring Cloud", "Axon", "RabbitMQ", "PostgreSQL", "Reactive", "WebFlux", "R2DBC"]
+excerpt: "Découvrez le starter `spring-microservices-starter` basé sur l’écosystème **Spring Cloud** ."
+author: "Papa COUNDIA"
+link: "https://github.com/coundia/spring-microservices-starter"
+---
+
+
 # Starter Microservices Spring Cloud
 
 Dans cet article, je vous présente mon projet de starter microservices basé sur l’écosystème **Spring Cloud**, incluant **Eureka**, **Cloud Config**, **Gateway**, **Axon**, **RabbitMQ**, et **PostgreSQL**. L’objectif est de fournir un exemple de configuration et d’implémentation entièrement réactive et scalable.

@@ -2,7 +2,7 @@
 title: "Starter Microservices Spring Cloud"
 date: "2025-03-28"
 tags: ["Java", "DDD", "CQRS", "Spring Cloud", "Axon", "RabbitMQ", "PostgreSQL", "Reactive", "WebFlux", "R2DBC"]
-excerpt: "Découvrez le starter `spring-microservices-starter` basé sur l’écosystème **Spring Cloud** ."
+excerpt: "Découvrez le starter `spring-microservices-starter` basé sur l’écosystème **Spring Cloud**  ."
 author: "Papa COUNDIA"
 link: "https://github.com/coundia/spring-microservices-starter"
 ---

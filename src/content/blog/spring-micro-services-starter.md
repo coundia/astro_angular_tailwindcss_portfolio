@@ -9,12 +9,11 @@ link: "https://github.com/coundia/spring-microservices-starter"
 
 # Starter Microservices Spring Cloud
 
-Dans cet article, je vous présente mon projet de starter microservices basé sur l’écosystème **Spring Cloud**, incluant **Eureka**, **Cloud Config**, **Gateway**, **Axon**, **RabbitMQ**, et **PostgreSQL**. L’objectif est de fournir un exemple de configuration et d’implémentation entièrement réactive et scalable.
-Dans un environnement 100% réactif avec **WebFlux** et **R2DBC**(Non bloquant), les microservices communiquent entre eux de manière asynchrone,
-ce qui permet de gérer un grand nombre de requêtes simultanées.
+Cet article présente le projet `spring-microservices-starter`, un socle technique destiné à simplifier la mise en place d’architectures microservices réactives et évolutives. Ce starter repose sur l’écosystème **Spring Cloud** et intègre des composants tels que **Eureka**, **Spring Cloud Config**, **Gateway**, **Axon Framework**, **RabbitMQ**, **PostgreSQL**, et **WebFlux** avec **R2DBC** pour assurer une communication non bloquante et entièrement asynchrone.
 
-Le project est modulaire et évolutif disponible dans ici :
-[https://github.com/coundia/spring-microservices-starter](https://github.com/coundia/spring-microservices-starter)
+L’objectif est de fournir un modèle de démarrage robuste pour développer des microservices modulaires, scalables, et facilement maintenables. Il s’adresse aux équipes souhaitant adopter une architecture moderne et réactive en environnement distribué.
+
+Le projet est disponible sur GitHub : [https://github.com/coundia/spring-microservices-starter](https://github.com/coundia/spring-microservices-starter)
 
 ## Sommaire
 1. [Architecture Globale](#architecture-globale)
@@ -30,69 +29,65 @@ Le project est modulaire et évolutif disponible dans ici :
 
 ## Architecture Globale
 
-Voici un aperçu de la structure du projet :
+L’architecture repose sur les composants suivants :
 
 ![architecture_system.png](assets/architecture_system.png)
 
-- **Cloud Config Server (Port 8081)** : Serveur de configuration centralisé.
-- **Eureka (Port 8761)** : Service de découverte pour enregistrer et localiser les microservices.
-- **Gateway (Port 8080)** : Point d’entrée unique, qui fait du load-balancing et du routage.
-- **Product-Command (Port 8090)** : Microservice pour gérer les commandes (CUD) des produits.
-- **Product-Query (Port 8091)** : Microservice pour gérer la consultation (Read) des produits.
+- **Cloud Config Server (Port 8081)** : Serveur de configuration centralisé chargé de fournir les fichiers de configuration aux microservices.
+- **Eureka (Port 8761)** : Registre de services permettant à chaque microservice de découvrir dynamiquement les autres.
+- **Gateway (Port 8080)** : Point d’entrée unique permettant le routage, la sécurité, et la tolérance aux pannes.
+- **Product-Command (Port 8090)** : Microservice chargé des opérations de création, modification et suppression des produits.
+- **Product-Query (Port 8091)** : Microservice dédié à la consultation des données produits.
 
-L’ensemble est orchestré par Docker ou Docker Compose pour une gestion simplifiée de l’infrastructure.
+Les services sont orchestrés via **Docker** ou **Docker Compose** pour faciliter le déploiement et la gestion.
+
 ## Architecture DDD
 
-Le projet est basé sur l'architecture **DDD** (Domain Driven Design) avec les couches suivantes :
+Le projet adopte l’approche **Domain Driven Design (DDD)** afin de mieux structurer le code métier. Il est découpé en couches clairement identifiées :
 
 ![ddd_layers.png](assets/ddd_layers.png)
 
 source: https://www.hibit.dev/posts/15/domain-driven-design-layers
 
-- **Domain Layer** : Contient les entités, les valeurs d’objet, les agrégats, les événements, les commandes, les gestionnaires de commandes, les spécifications, les services de domaine, etc.
-- **Application Layer** : Contient les services d’application, les gestionnaires de commandes, les gestionnaires de requêtes, les gestionnaires d’événements, etc.
-- **Infrastructure Layer** : Contient les implémentations des interfaces de persistance, les implémentations des interfaces de messagerie, les implémentations des interfaces de configuration, etc.
-- **Presentation Layer** : Contient les contrôleurs REST (@RestController)
+- **Domain Layer** : Contient les entités, agrégats, événements, commandes, objets valeurs et services métier.
+- **Application Layer** : Coordonne les opérations métier via des gestionnaires de commandes, d’événements et de requêtes.
+- **Infrastructure Layer** : Implémente les interfaces techniques (base de données, messaging, configuration).
+- **Presentation Layer** : Fournit les API REST pour l’exposition externe.
 
 ## Services Principaux
 
 ### Cloud Config Server
-Ce service charge la configuration depuis un dépôt Git local ou distant. L’application consomme ensuite cette configuration au démarrage pour centraliser et uniformiser la configuration.
+Centralise la configuration des microservices à partir d’un dépôt Git local ou distant. Cela permet une uniformisation et une gestion centralisée de la configuration.
 
 ### Eureka
-Chaque service s’enregistre auprès de **Eureka** et peut ensuite découvrir les autres services par leur nom logique, sans avoir à connaître les adresses réseau exactes.
+Chaque microservice s’enregistre auprès d’Eureka et peut découvrir les autres services par leur nom, sans dépendance à une adresse IP ou un port statique.
 
 ### Gateway
-Permet de centraliser toutes les requêtes sortantes et entrantes. 
-Les clients externes n’ont accès qu’au Gateway, qui fait office de passerelle.
-Il gère également la résilience avec **Resilience4j** 
+Fait office de passerelle unique pour toutes les requêtes entrantes. Il intègre des mécanismes de résilience avec **Resilience4j**.
 
 ### Product-Command
-C’est le microservice pour les opérations d’écriture (Create, Update, Delete) sur les produits. Il peut utiliser **Axon** et **RabbitMQ** pour émettre des événements.
+Responsable des opérations de modification des produits. Il utilise **Axon** pour la gestion des commandes et des événements, et **RabbitMQ** pour la communication inter-services.
 
 ### Product-Query
-Ce microservice expose des requêtes en lecture pour récupérer la liste ou le détail des produits.
+Expose les données en lecture via des projections. Repose sur **R2DBC** pour l’accès non bloquant à la base PostgreSQL.
 
 ## Configuration Eureka
 
-Voici un extrait typique du `application.properties` pour Eureka :
+Extrait du fichier `application.properties` pour Eureka :
 
 ```properties
 spring.application.name=eureka
 server.port=8761
-
-# Désactive la découverte pour lui-même
 eureka.client.register-with-eureka=false
-
-# eureka.client.fetch-registry=false car c’est le serveur
+eureka.client.fetch-registry=false
 management.endpoints.web.exposure.include=health,info
 ```
 
-Une fois démarré, Eureka sera accessible sur `http://localhost:8761/`.
+Accessible via : `http://localhost:8761/`
 
 ## Configuration du Cloud Config Server
 
-Exemple de configuration minimale :
+Exemple de configuration minimale :
 
 ```properties
 spring.application.name=cloud-config-server
@@ -100,11 +95,11 @@ server.port=8081
 spring.cloud.config.server.git.uri=/MON-PATH/config-repo
 ```
 
-Dans le dépôt local `config-repo/`, on placera les fichiers `gateway-server.properties`, `product-command.properties`, etc., pour centraliser la configuration.
+Les fichiers de configuration centralisés (ex: `gateway-server.properties`, `product-command.properties`) sont placés dans ce dépôt.
 
 ## Configuration du Gateway
 
-Le Gateway utilise les routes pour rediriger les requêtes vers les microservices :
+Configuration typique du Gateway avec découverte de service :
 
 ```properties
 spring.application.name=gateway-server
@@ -121,9 +116,9 @@ spring.cloud.gateway.routes[0].predicates[0]=Path=/api/v1/commands/products/**
 
 ## Axon, RabbitMQ et PostgreSQL
 
-- **Axon** : Framework de mise en œuvre de **CQRS** et **Event Sourcing**.
-- **RabbitMQ** : Broker de messages pour la communication asynchrone.
-- **PostgreSQL** : Base de données relationnelle pour persister les données (Il sert egalement de event store).
+- **Axon** : Implémente les patterns **CQRS** et **Event Sourcing**.
+- **RabbitMQ** : Facilite la communication asynchrone entre les services.
+- **PostgreSQL** : Utilisé à la fois pour le stockage traditionnel et comme **event store** avec Axon.
 
 ### Exemple de test réactif
 
@@ -141,23 +136,22 @@ void it_should_create_aggregate_reactively() {
 
 ## Sécuriser les Microservices
 
-Pour vous assurer que seuls les appels venant du Gateway sont autorisés, vous pouvez ajouter un header spécifique (ex. `X-Gateway-Auth`) via un **Route Filter** ou un **Global Filter** dans Gateway, et vérifier la présence de ce header côté microservices :
+Pour garantir que seuls les appels issus du Gateway accèdent aux microservices, un header spécifique (`X-Gateway-Auth`) peut être ajouté via un **Route Filter** :
 
 ```properties
 spring.cloud.gateway.routes[0].filters[0]=AddRequestHeader=X-Gateway-Auth,true
 ```
 
-Ensuite, dans chaque microservice :
+Puis vérifié dans les services internes :
 
 ```java
 .http.authorizeExchange(exchanges -> exchanges
-        .pathMatchers("/api/v1/commands/**").access(gatewayAuthManager)
+        .pathMatchers("/**").access(gatewayAuthManager)
         .anyExchange().permitAll()
 )
 ```
 
 ## Conclusion
 
-Ce starter fournit une architecture solide basée sur **Spring Cloud**, **Axon**, **RabbitMQ**, et **PostgreSQL**. 
-L’objectif est de montrer comment mettre en place une infrastructure microservices réactive, scalable et maintenable. Vous pouvez cloner ce projet, personnaliser la configuration, et ajouter vos propres fonctionnalités pour répondre à vos besoins métiers.
+Le projet `spring-microservices-starter` constitue une base solide pour développer des systèmes microservices modernes, réactifs et résilients. Grâce à une architecture modulaire, à l’intégration de composants éprouvés, et à l’adoption de principes comme le DDD et le CQRS, il permet d’industrialiser rapidement le développement de services métiers robustes. Il peut être utilisé tel quel ou adapté aux besoins spécifiques d’une organisation.
 

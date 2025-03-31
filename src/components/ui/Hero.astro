@@ -13,11 +13,11 @@ const { fullName, title, institute, profilePicture } = Astro.props
 <div class="flex-1">
   <h1 class="text-5xl font-bold mb-6 opacity-0 animate-fade-in-up">
     <span class="text-primary">
-      <AnimatedTextComponent text= {fullName}  timer=1000 client:visible></AnimatedTextComponent>
+      <AnimatedTextComponent text= {fullName}  timer=1 client:visible></AnimatedTextComponent>
    </span>
   </h1>
   <p class="text-2xl text-gray-500 mb-4 opacity-0 animate-fade-in-up delay-200">
-    <AnimatedTextComponent text= {title} timer=500 client:visible></AnimatedTextComponent>
+    <AnimatedTextComponent text= {title} timer=1 client:visible></AnimatedTextComponent>
   </p>
   <p class="text-lg text-gray-700 mb-6">
     <AnimatedTextComponent timer=500 text={HomeFr.presentation} client:visible></AnimatedTextComponent>

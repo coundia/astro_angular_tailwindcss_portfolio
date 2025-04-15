@@ -22,4 +22,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
-DOC/.HELP.md
+DOC/HELP/.HELP.md
+
+HELP
+DOC/HELP

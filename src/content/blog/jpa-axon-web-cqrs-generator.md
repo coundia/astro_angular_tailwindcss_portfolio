@@ -56,6 +56,9 @@ resources/templates/        # Templates Mustache pour la génération
 shared/           # Services utilitaires communs
 ```
 
+![ddd_layers.png](assets/ddd_layers.png)
+source: [https://www.hibit.dev/posts/15/domain-driven-design-layers](https://www.hibit.dev/posts/15/domain-driven-design-layers)
+
 ## 🚀 Mise en route
 
 Démarrage du projet en local :
@@ -143,6 +146,16 @@ Cet outil s’applique dans de nombreux contextes métier :
 - Systèmes de réservation
 - Outils internes d’entreprise
 - Projets open-source structurés
+
+## 📜 Documentation
+
+La documentation complète de l'API est générée automatiquement 
+![api_gwd.png](assets/api_gwd.png)
+
+Une image des fichiers générés :
+
+![gwd1.png](assets/gwd1.png)
+![gwd.png](assets/gwd.png)
 
 ## 🔗 Dépôt GitHub
 

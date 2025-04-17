@@ -4,7 +4,7 @@ date: "2025-04-17"
 tags: ["Spring Boot", "WebFlux", "CQRS", "DDD", "R2DBC"]
 excerpt: "Découvrez un générateur de code backend réactif basé sur Spring WebFlux, R2DBC et les principes DDD/CQRS, sans dépendance à Axon."
 author: "Papa COUNDIA"
-link: "https://github.com/coundia/cqrs-webflux-starter"
+link: "https://github.com/coundia/cqrs-webflux-generator"
 ---
 
 ## 🚀 Introduction

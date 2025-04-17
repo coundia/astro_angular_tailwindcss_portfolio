@@ -44,6 +44,9 @@ Le tout, en exploitant les atouts suivants :
 
 ## 📦 Architecture Générée
 
+![ddd_layers.png](assets/ddd_layers.png)
+source: [https://www.hibit.dev/posts/15/domain-driven-design-layers](https://www.hibit.dev/posts/15/domain-driven-design-layers)
+
 ```text
 project-root/
 ├── domain/

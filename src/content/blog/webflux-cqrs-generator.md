@@ -88,10 +88,6 @@ Content-Type: application/json
 
 👉 Voir le projet généré : [GitHub - cqrs-webflux-starter](https://github.com/coundia/cqrs-webflux-starter)
 
-# Code généré
-
-[tree.md](assets/tree.md)
-
 # Documentation générée
 
 ![api_webflux_generator.png](assets/api_webflux_generator.png)

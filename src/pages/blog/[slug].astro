@@ -4,7 +4,7 @@ import {template} from '../../data/settings'
 import {getCollection, render} from 'astro:content'
 
 export async function getStaticPaths(): Promise<Array<{ params: { slug: string }, props: { post: any } }>> {
-    const blogEntries = await getCollection("blog");
+	const blogEntries = await getCollection("blog");
 
 	return blogEntries
 		.map(post => {
@@ -26,30 +26,30 @@ const getValidUrl = (url: string) => {
 <Layout title={title}>
 	<div class='max-w-4xl mx-auto mb-20'>
 		<article
-			class='prose max-w-none prose-headings:text-base-content prose-p:text-base-content/80'
+				class='prose max-w-none prose-headings:text-base-content prose-p:text-base-content/80'
 		>
-			<!-- Header section -->
+			<!-- En-tête -->
 			<div class='mb-8 border-b pb-8'>
 				<h1 class='text-4xl font-bold mb-4 text-base-content'>{title}</h1>
 				<div class='flex flex-wrap items-center gap-4 text-base-content/70'>
 					<!-- Date -->
 					<time datetime={date} class='flex items-center'>
 						<svg
-							xmlns='http://www.w3.org/2000/svg'
-							class='h-4 w-4 mr-2'
-							fill='none'
-							viewBox='0 0 24 24'
-							stroke='currentColor'
+								xmlns='http://www.w3.org/2000/svg'
+								class='h-4 w-4 mr-2'
+								fill='none'
+								viewBox='0 0 24 24'
+								stroke='currentColor'
 						>
 							<path
-								stroke-linecap='round'
-								stroke-linejoin='round'
-								stroke-width='2'
-								d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'
+									stroke-linecap='round'
+									stroke-linejoin='round'
+									stroke-width='2'
+									d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'
 							></path>
 						</svg>
 						{
-							new Date(date).toLocaleDateString('en-US', {
+							new Date(date).toLocaleDateString('fr-FR', {
 								year: 'numeric',
 								month: 'long',
 								day: 'numeric',
@@ -60,19 +60,19 @@ const getValidUrl = (url: string) => {
 					<!-- Tags -->
 					{
 						tags && (
-							<div class='flex flex-wrap gap-2'>
-								{tags.map(tag => (
-									<span class='badge badge-accent badge-outline'>{tag}</span>
-								))}
-							</div>
+									<div class='flex flex-wrap gap-2'>
+										{tags.map(tag => (
+												<span class='badge badge-accent badge-outline'>{tag}</span>
+										))}
+									</div>
 						)
 					}
 				</div>
 			</div>
 
-			<!-- Post content -->
+			<!-- Contenu de l'article -->
 			<div
-				class='prose mt-8 prose-h2:text-2xl prose-h2:font-bold prose-h2:mb-4
+					class='prose mt-8 prose-h2:text-2xl prose-h2:font-bold prose-h2:mb-4
          prose-h3:text-xl prose-h3:font-semibold prose-h3:mb-3
          prose-p:mb-4 prose-p:leading-relaxed
          prose-strong:text-base-content prose-strong:font-bold
@@ -84,11 +84,13 @@ const getValidUrl = (url: string) => {
          prose-ol:list-decimal prose-ol:pl-6
          prose-li:mb-2
          prose-img:rounded-lg prose-img:my-8'
-        >
-                <Content />
+			>
+				<Content />
 			</div>
+
+			<!-- Auteur et lien -->
 			<div class="m-10">
-				Auteur: {author}
+				<p>Auteur : {author}</p>
 				<div class="card-actions justify-end mt-4">
 					<a href={getValidUrl(link)} target="_blank" class="btn btn-sm btn-primary text-secondary-content">
 						Lire plus

@@ -5,7 +5,7 @@ import { trimExcerpt } from '../../lib/utils';
 import { template } from '../../data/settings';
 import { getCollection } from 'astro:content';
 import { getRelativeLocaleUrl } from 'astro:i18n';
-import {CvFr} from "../../data/CvFr";
+import { CvFr } from "../../data/CvFr";
 
 export async function getStaticPaths({ paginate }) {
 	const blogEntries = await getCollection('blog');
@@ -14,7 +14,7 @@ export async function getStaticPaths({ paginate }) {
 		.map(post => ({
 			title: post.data.title,
 			date: post.data.date,
-			badge: post.data.tags?.[0] ?? 'General',
+			badge: post.data.tags?.[0] ?? 'Général',
 			excerpt: trimExcerpt(post.data.excerpt),
 			slug: post.slug,
 		}))
@@ -30,9 +30,9 @@ const { page } = Astro.props;
 const blogRt = getRelativeLocaleUrl("fr", "blog");
 ---
 
-<Layout title=`Blog de ${CvFr.person.fullName}`>
+<Layout title={`Blog de ${CvFr.person.fullName}`}>
 	<div>
-		<h1 class="text-3xl font-bold mb-8">Blog </h1>
+		<h1 class="text-3xl font-bold mb-8">Blog</h1>
 		<div class="grid gap-8">
 			{page.data.map(post => (
 					<article class="card bg-base-200 transition-all">
@@ -48,7 +48,7 @@ const blogRt = getRelativeLocaleUrl("fr", "blog");
 								</div>
 							</div>
 							<time datetime={post.date} class="text-sm text-base-content/71">
-								{new Date(post.date).toLocaleDateString('en-US', {
+								{new Date(post.date).toLocaleDateString('fr-FR', {
 									year: 'numeric',
 									month: 'long',
 									day: 'numeric',
@@ -60,7 +60,7 @@ const blogRt = getRelativeLocaleUrl("fr", "blog");
 										href={`${blogRt}${post.slug}`}
 										class="btn btn-sm btn-secondary text-secondary-content"
 								>
-									Read More
+									Lire l’article
 								</a>
 							</div>
 						</div>

@@ -23,3 +23,10 @@ https://docs.astro.build/en/getting-started/
 https://analogjs.org/docs/packages/astro-angular/overview
 
 https://angular.dev/overview
+
+
+sudo certbot certonly --webroot \
+-w /var/www/megastore.sn   -d megastore.sn   -d www.megastore.sn \
+-w /var/www/pcoundia.com   -d pcoundia.com   -d www.pcoundia.com \
+ 
+&& sudo systemctl reload nginx

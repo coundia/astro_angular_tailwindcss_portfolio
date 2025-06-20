@@ -15,12 +15,12 @@ export  const CvFr = {
 		},
 		experiences: [
 			{
-				location: "Thiès (Sénégal)",
-				time: "Juin 2022- Actuellement",
-				title: "Consultant IT",
+				location: "Dakar (Sénégal)",
+				time: "Juin 2025- Actuellement",
+				title: "Développeur Spring Boot / Angular",
 				description: [
 				],
-				link:"https://www.pcoundia.com/"
+				link:"https://bgdigit-all.com/"
 			},
 			{
 				location: "Devalto (en remote) Canada (Québec)",

@@ -23,7 +23,7 @@ export  const CvFr = {
 				link:"https://bgdigit-all.com/"
 			},
 			{
-				location: "Devalto (en remote) Canada (Québec)",
+				location: "Devalto Canada (Québec)",
 				time: "Juin 2022- Mars 2025",
 				title: "Développeur WEB",
 				description: [
@@ -57,27 +57,7 @@ export  const CvFr = {
 					"Technologies: PHP(Symfony), Javascript (Angular)"
 				],
 				link:""
-			},
-			{
-				title: "Stagiaire",
-				location: "Université de Thiès - DSOS (Sénégal)",
-				time: "Dec 2017- Mai 2018",
-				description: [
-					"Participer à l'inscription des étudiants via une plate-forme interne.",
-					"Participer au développement d'une plateforme d'inscription en ligne.",
-					"Technologies: PHP(Symfony), Javascript (Angular)"
-				],
-				link:"https://www.univ-thies.sn/"
-			},
-			{
-				location: "SEYSOO SARL, (Sénégal)",
-				time: "2019 - 2020",
-				title: "Stagiaire",
-				description: [
-					"Memoire de fin d'études: sujet: Mise en place des algorithmes d'apprentissage pour la reconnaissance de situations de détresse du Bétail (cas vol).",
-				],
-				link:"http://www.seysoo.com/en"
-			},
+			}
 		],
 		formations: [
 			{

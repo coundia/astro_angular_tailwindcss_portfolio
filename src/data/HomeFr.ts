@@ -2,8 +2,8 @@ export const HomeFr = {
 	'welcome': "Bienvenue",
 	'presentation': 'Développeur expérimenté,' +
 		' spécialisé dans la création d’applications performantes et centrées ' +
-		'sur l’utilisateur avec Angular et Tailwind CSS. Une expertise étendue ' +
-		'côté back-end avec Java (Spring), PHP, ainsi que dans les architectures modernes' +
+		'sur l’utilisateur. Une expertise étendue ' +
+		' avec Java (Spring), PHP, TypeScript(Angular et REACT) ainsi que dans les architectures modernes' +
 		' telles que DDD et CQRS. Ouvert aux collaborations sur des projets innovants et à fort impact sociétal.',
 	'projects': 'Projets',
 	'services': 'Services',

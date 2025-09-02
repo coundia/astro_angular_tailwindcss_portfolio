@@ -5,14 +5,7 @@ export const Projects = [
 		logo: "megastore.png",
 		description: "Plateforme e-commerce proposant une large gamme de produits avec une boutique physique au Sénégal.",
 		resume: "E-commerce et magasin physique au Sénégal.",
-		link: "https://www.megastore.sn",
-	},
-	{
-		title: "Groupe 2CS",
-		logo: "groupe2cs.png",
-		description: "Entreprise spécialisée en consultance informatique, offrant des solutions technologiques innovantes.",
-		resume: "Expertise en conseil IT et solutions numériques.",
-		link: "https://www.groupe2cs.com",
+		link: "https://shop.megastore.sn/store/shop",
 	},
 	{
 		title: "Générateur code DDD avec Spring Boot",

@@ -1,22 +1,27 @@
 export const Services = [
 	{
-		title: "Consulting IT",
-		description: "Accompagnement stratégique dans le domaine des technologies de l'information, de la transformation numérique et de l'optimisation des processus métiers.",
-		resume: "Conseil et solutions technologiques pour améliorer les performances de votre entreprise.",
+		title: "Conseil IT",
+		description: "Appui stratégique pour les entreprises souhaitant améliorer leur organisation grâce aux technologies de l'information, à la digitalisation et à l’optimisation de leurs processus métiers.",
+		resume: "Un accompagnement sur mesure pour vous aider à tirer le meilleur parti du numérique.",
 	},
 	{
 		title: "Développement Web",
-		description: "Création de sites web performants, responsive et sécurisés, adaptés aux besoins spécifiques de votre entreprise, avec une attention particulière à l'expérience utilisateur.",
-		resume: "Développement de solutions web modernes, de la conception à la mise en production.",
+		description: "Création de sites et applications web adaptés à vos besoins, performants, sécurisés, et faciles à maintenir, avec une attention particulière portée à l’ergonomie et à l’expérience utilisateur.",
+		resume: "Conception et développement de solutions web modernes et fiables.",
 	},
 	{
-		title: "Solutions DDD/CQRS",
-		description: "Mise en œuvre de l'architecture Domain-Driven Design (DDD) et CQRS pour une meilleure gestion des systèmes complexes et la scalabilité des applications.",
-		resume: "Automatisation de la génération de code DDD/CQRS avec des outils comme le DDD Maker Bundle.",
+		title: "Développement Desktop",
+		description: "Conception d'applications desktop robustes pour des environnements spécifiques, alliant performance, stabilité et simplicité d’utilisation.",
+		resume: "Applications desktop personnalisées, pensées pour la productivité.",
+	},
+	{
+		title: "Développement Mobile",
+		description: "Création d’applications mobiles utiles et intuitives, pour Android et iOS, afin d’accompagner votre présence numérique en mobilité.",
+		resume: "Des applications mobiles centrées sur l’utilisateur et vos objectifs métiers.",
 	},
 	{
 		title: "Formation & Support",
-		description: "Formation personnalisée pour vos équipes en développement logiciel, ainsi que le support technique sur les technologies que vous utilisez.",
-		resume: "Accompagnement pour maîtriser les bonnes pratiques du développement et la gestion efficace des projets informatiques.",
+		description: "Formations pratiques et accompagnement technique sur les outils et technologies que vous utilisez, pour renforcer les compétences de vos équipes.",
+		resume: "Former, assister et faire progresser vos équipes en toute simplicité.",
 	},
 ];

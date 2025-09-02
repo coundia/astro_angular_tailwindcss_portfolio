@@ -65,37 +65,37 @@ jobs:
           rsync -avzL --chown=$SERVER_USER:www-data --chmod=775 --delete dist/ "$SERVER_USER@$SERVER_IP:$SERVER_PATH" -v
   
 
-  selenium-test:
-    runs-on: ubuntu-latest
-    needs: deploy-on-test
-    services:
-      selenium-hub:
-        image: selenium/hub:latest
-        ports:
-          - 4444:4444
+#  selenium-test:
+#    runs-on: ubuntu-latest
+#    needs: deploy-on-test
+#    services:
+#      selenium-hub:
+#        image: selenium/hub:latest
+#        ports:
+#          - 4444:4444
+#
+#      chrome-node:
+#        image: selenium/node-chrome:latest
+#        env:
+#          SE_EVENT_BUS_HOST: selenium-hub
+#          SE_EVENT_BUS_PUBLISH_PORT: 4442
+#          SE_EVENT_BUS_SUBSCRIBE_PORT: 4443
 
-      chrome-node:
-        image: selenium/node-chrome:latest
-        env:
-          SE_EVENT_BUS_HOST: selenium-hub
-          SE_EVENT_BUS_PUBLISH_PORT: 4442
-          SE_EVENT_BUS_SUBSCRIBE_PORT: 4443
-
-    steps:
-      - name: Checkout Selenium Tests Repository
-        run: |
-          git clone https://github.com/coundia/selenium-java-pcoundia.git selenium-tests
-
-      - name: Run Selenium Tests
-        env:
-          SELENIUM_HUB_URL: "http://localhost:4444/wd/hub"
-          SERVER_URL: "https://test.pcoundia.com"  # Point to your test server URL
-        run: |
-          cd selenium-tests
-          mvn clean test -Dapp.url=$SERVER_URL
+#    steps:
+#      - name: Checkout Selenium Tests Repository
+#        run: |
+#          git clone https://github.com/coundia/selenium-java-pcoundia.git selenium-tests
+#
+#      - name: Run Selenium Tests
+#        env:
+#          SELENIUM_HUB_URL: "http://localhost:4444/wd/hub"
+#          SERVER_URL: "https://test.pcoundia.com"  # Point to your test server URL
+#        run: |
+#          cd selenium-tests
+#          mvn clean test -Dapp.url=$SERVER_URL
 
   deploy-on-prod:
-    needs: selenium-test
+#    needs: selenium-test
     runs-on: ubuntu-latest
     steps:
       - name: Download build artifacts

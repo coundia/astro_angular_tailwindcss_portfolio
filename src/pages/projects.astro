@@ -1,42 +1,52 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Projects } from "../data/Projects";
-import {CvFr} from "../data/CvFr";
-import { highlightAuthor } from "../lib/utils";
-import {template} from "../data/settings";
-import {AnimatedTextComponent} from "../components/animation/AnimatedTextComponent";
+import { CvFr } from "../data/CvFr";
+import { AnimatedTextComponent } from "../components/animation/AnimatedTextComponent";
 
-const getValidUrl = (url: string) => {
-  return url.startsWith("http://") || url.startsWith("https://") ? url : `https://${url}`;
-};
+const getValidUrl = (url: string) =>
+    url.startsWith("http://") || url.startsWith("https://") ? url : `https://${url}`;
 ---
 
-<Layout title=`Projets ${CvFr.person.fullName}`>
+<Layout title={`Projets ${CvFr.person.fullName}`}>
   <div class="prose max-w-none">
     <h1 class="text-3xl font-bold mb-8">
-      <AnimatedTextComponent text="Mes projets" timer=500 client:visible></AnimatedTextComponent>
+      <AnimatedTextComponent text="Mes projets" timer={500} client:visible />
     </h1>
-    <div class="space-y-8">
+
+    <div class=" ">
       {
         Projects.map((project) => (
-            <div class="card bg-base-200">
-              <figure class="p-4">
+
+            <div class="card bg-base-200 group transition hover:-translate-y-1 hover:shadow-xl m-12">
+              <figure class="relative  ">
+                <a
+                    href={getValidUrl(project.link)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Ouvrir ${project.title}`}
+                    class="absolute inset-0 z-10 block"
+                />
                 <img
                     src={typeof project.logo === 'string' ? project.logo : project.logo.src}
                     alt={project.title}
-                    class="h-36 object-contain"
                     loading="lazy"
+                    sizes="(max-width: 640px) 100vw, 33vw"
                 />
               </figure>
+
+
               <div class="card-body">
                 <h2 class="card-title text-xl">
-                  <a href={getValidUrl(project.link)} target="_blank" class="hover:text-accent">
+                  <a href={getValidUrl(project.link)} target="_blank" rel="noopener noreferrer" class="hover:text-accent">
                     {project.title}
                   </a>
                 </h2>
-                <h>{project.resume}</h>
+
+                <p class="mt-1">{project.resume}</p>
+
                 <p class="text-sm mb-3">
-                  <span class="italic">{project.description}</span> • {project.time}
+                  <span class="italic">{project.description}</span>{project.time ? ` • ${project.time}` : ""}
                 </p>
                 <p class="text-sm text-base-content/80">{project.abstract}</p>
                 <div class="card-actions justify-end mt-4">

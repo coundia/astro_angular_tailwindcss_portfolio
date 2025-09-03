@@ -19,6 +19,9 @@ export  const CvFr = {
 				time: "Juin 2025- Actuellement",
 				title: "Développeur Spring Boot / Angular",
 				description: [
+					"Participer au développement et maintenance de la plateforme existante https://emploijeunes.sn/ ",
+					"Intervenir dans plusieurs niveaux front-end, back-end, tests fonctionnels et déploiement (CI/CD) Jenkins.",
+					"Technologies: Java(Spring Boot), TypeScript (Angular), Docker, CQRS, Novu, Jenkins, Redis, GRAFANA, Prometheus"
 				],
 				link:"https://bgdigit-all.com/"
 			},
@@ -29,7 +32,7 @@ export  const CvFr = {
 				description: [
 					"Participer au développement et maintenance de la plateforme existante LogAlto (www.logalto.com)",
 					"Intervenir dans plusieurs niveaux front-end, back-end, tests fonctionnels et code review.",
-					"Technologies: PHP(Symfony), Javascript (ExtJs), Docker, CQRS, Selenium"
+					"Technologies: PHP(Symfony), Javascript (ExtJs), Docker, DDD, CQRS, Selenium, blackfire",
 				],
 				link:"https://www.devalto.com/"
 			},

@@ -3,7 +3,7 @@ export const HomeFr = {
 	'presentation': 'Développeur expérimenté,' +
 		' spécialisé dans la création d’applications performantes et centrées ' +
 		'sur l’utilisateur. Une expertise étendue ' +
-		' avec Java (Spring), PHP, TypeScript(Angular et REACT) ainsi que dans les architectures modernes' +
+		' avec Java, PHP, TypeScript ainsi que dans les architectures modernes' +
 		' telles que DDD et CQRS. Ouvert aux collaborations sur des projets innovants et à fort impact sociétal.',
 	'projects': 'Projets',
 	'services': 'Services',

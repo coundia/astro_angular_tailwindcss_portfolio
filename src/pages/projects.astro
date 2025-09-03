@@ -20,6 +20,11 @@ const getValidUrl = (url: string) => {
       {
         Projects.map((project) => (
             <div class="card bg-base-200">
+              <figure>
+                <img
+                    src={project.logo}
+                    alt={project.title} />
+              </figure>
               <div class="card-body">
                 <h2 class="card-title text-xl">
                   <a href={getValidUrl(project.link)} target="_blank" class="hover:text-accent">
@@ -33,7 +38,7 @@ const getValidUrl = (url: string) => {
                 <p class="text-sm text-base-content/80">{project.abstract}</p>
                 <div class="card-actions justify-end mt-4">
                   <a href={getValidUrl(project.link)} target="_blank" class="btn btn-sm btn-primary text-secondary-content">
-                    Lire plus
+                    Lien du projet
                   </a>
                 </div>
               </div>

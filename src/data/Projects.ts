@@ -4,6 +4,8 @@ import flutterLogo from "../assets/topall_flutter.png";
 import portfolioLogo from "../assets/pcoundia.com.png";
 import megaLogo from "../assets/megastore.png";
 import dddLayers from "../assets/ddd_layers.png";
+import ddd2 from "../assets/ddd2.png";
+import ddd1 from "../assets/ddd1.png";
 
 export const Projects = [
 	{
@@ -43,14 +45,14 @@ export const Projects = [
 	},
 	{
 		title: "Générateur code DDD (Spring Boot MVC)",
-		logo: dddLayers,
+		logo: ddd2,
 		description: "Générateur Web pour projets CQRS + DDD sur Spring Boot avec Axon et RabbitMQ : domaines, commandes/événements, services et endpoints. Évolution continue.",
 		resume: "Industrialisation DDD côté Spring (JPA, Axon, RabbitMQ).",
 		link: "https://github.com/coundia/axon-web-cqrs-generator",
 	},
 	{
 		title: "Générateur code DDD (Spring Boot WebFlux)",
-		logo: dddLayers,
+		logo: ddd1,
 		description: "Variante 100% réactive : CQRS + DDD sur Spring Boot, Axon et RabbitMQ, I/O haute performance et back-pressure.",
 		resume: "Version réactive du générateur DDD (WebFlux).",
 		link: "https://github.com/coundia/axon-webflux-cqrs-generator",

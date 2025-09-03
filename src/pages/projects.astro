@@ -20,10 +20,13 @@ const getValidUrl = (url: string) => {
       {
         Projects.map((project) => (
             <div class="card bg-base-200">
-              <figure>
+              <figure class="p-4">
                 <img
-                    src={project.logo}
-                    alt={project.title} />
+                    src={typeof project.logo === 'string' ? project.logo : project.logo.src}
+                    alt={project.title}
+                    class="h-36 object-contain"
+                    loading="lazy"
+                />
               </figure>
               <div class="card-body">
                 <h2 class="card-title text-xl">

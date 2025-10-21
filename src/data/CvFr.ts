@@ -15,15 +15,15 @@ export  const CvFr = {
 		},
 		experiences: [
 			{
-				location: "Dakar (Sénégal)",
+				location: "THIES (Sénégal)",
 				time: "Juin 2025- Actuellement",
-				title: "Développeur Spring Boot / Angular",
+				title: "Consultant IT",
 				description: [
-					"Participer au développement et maintenance de la plateforme existante https://emploijeunes.sn/ ",
+					"Participer au développement et maintenance de la plateforme existante du SIME V2 (Système d'Information du Marché de l'emploi).",
 					"Intervenir dans plusieurs niveaux front-end, back-end, tests fonctionnels et déploiement (CI/CD) Jenkins.",
 					"Technologies: Java(Spring Boot), TypeScript (Angular), Docker, CQRS, Novu, Jenkins, Redis, GRAFANA, Prometheus"
 				],
-				link:"https://bgdigit-all.com/"
+				link:"#"
 			},
 			{
 				location: "Devalto Canada (Québec)",

@@ -23,11 +23,12 @@ export const Projects = [
 		link: "https://github.com/coundia/top-all-money-laravel",
 	},
 	{
-		title: "Top all money (Flutter)",
+		title: "Jaayko",
 		logo: flutterLogo,
-		description: "App mobile de gestion financière, offline-first avec sync sélective et outbox. DDD, ergonomie soignée et performances locales.",
-		resume: "Stack : Flutter • SQLite • DDD • sync différée • open-source.",
-		link: "https://github.com/coundia/money_pulse",
+		description: "Une app multi-plateforme (Desktop, Android, IOS) qui connecte vendeurs et acheteurs sans intermédiaire." +
+			" Publiez, discutez, vendez ou achetez — le tout en quelques secondes grave à l'IA.",
+		resume: "Stack : Flutter • SQLite • DDD • sync différée  ",
+		link: "https://www.pcoundia.com/app/jaayko",
 	},
 	{
 		title: "Portfolio (Angular)",

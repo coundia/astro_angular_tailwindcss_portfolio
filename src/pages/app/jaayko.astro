@@ -6,113 +6,88 @@ import logo from '../../assets/jaayko.png'
 const page = {
 	title: 'Jaayko – La nouvelle génération du commerce au Sénégal',
 	description:
-		"Jaayko est une application mobile innovante qui permet aux vendeurs et acheteurs de se connecter, de vendre et d’acheter des produits en toute simplicité au Sénégal.",
+		"Jaayko est l’application mobile qui connecte vendeurs et acheteurs au Sénégal. Vendez vos produits ou services, achetez localement et laissez l’IA faire le reste.",
 }
 ---
 
 <PrivacyLayout title={page.title} description={page.description}>
 	<!-- Hero Section -->
 	<section class="py-16 text-center flex flex-col items-center gap-6">
-		<img
-				src={logo.src}
-				alt="Logo Jaayko"
-				loading="lazy"
-				class="w-28 h-28 object-contain"
-		/>
+		<img src={logo.src} alt="Logo Jaayko" loading="lazy" class="w-28 h-28 object-contain" />
 
 		<h1 class="text-4xl font-bold text-primary">Bienvenue sur Jaayko</h1>
 
 		<p class="max-w-2xl text-lg opacity-80">
-			L’application <strong>Jaayko</strong> révolutionne le commerce digital au Sénégal.
-			Vendez, achetez et découvrez des produits autour de vous — simplement, rapidement et en toute confiance.
+			La plateforme qui connecte <strong>vendeurs</strong> et <strong>acheteurs</strong> au Sénégal.
+			Publiez, discutez, vendez ou achetez — le tout en quelques secondes.
 		</p>
 
 		<div class="flex flex-wrap justify-center gap-4 mt-6">
-			<a
-					href="https://play.google.com/store/apps/details?id=com.jaayko"
-					class="btn btn-primary"
-			>
+			<a href="https://play.google.com/store/apps/details?id=com.jaayko" class="btn btn-primary">
 				Télécharger sur Google Play
 			</a>
 
-			<a
-					href="https://www.pcoundia.com/app/jaayko-privacy"
-					class="btn btn-outline"
-			>
+			<a href="https://www.pcoundia.com/app/jaayko-privacy" class="btn btn-outline">
 				Règles de confidentialité
 			</a>
 		</div>
-
 	</section>
 
 	<!-- Features Section -->
 	<section class="py-20 bg-base-200">
 		<div class="max-w-5xl mx-auto px-6">
-			<h2 class="text-3xl font-bold text-center text-primary mb-12">
-				Pourquoi choisir Jaayko ?
-			</h2>
+			<h2 class="text-3xl font-bold text-center text-primary mb-12">Pourquoi choisir Jaayko ?</h2>
 
 			<div class="grid md:grid-cols-3 gap-10">
 				<div class="p-6 bg-base-100 rounded-xl shadow hover:shadow-lg transition">
 					<h3 class="text-xl font-semibold mb-2">🛍️ Vendez facilement</h3>
 					<p>
-						Sur Jaayko, tout le monde peut vendre : vos <strong>produits</strong>, vos <strong>créations</strong>
-						ou même vos <strong>compétences et services</strong>.
-						Publiez vos offres en quelques secondes, ajoutez des photos, fixez vos prix et touchez instantanément
-						des milliers d’acheteurs proches de vous.
+						Vendez vos <strong>produits</strong>, vos <strong>créations</strong> ou vos <strong>compétences</strong>.
+						En quelques clics, publiez une offre et touchez instantanément des acheteurs proches de vous.
 					</p>
 				</div>
-
 
 				<div class="p-6 bg-base-100 rounded-xl shadow hover:shadow-lg transition">
 					<h3 class="text-xl font-semibold mb-2">📱 Achetez localement</h3>
 					<p>
-						Découvrez des produits autour de vous grâce à la géolocalisation et soutenez les vendeurs locaux.
+						Trouvez des produits, services et artisans autour de vous.
+						Achetez local, soutenez votre communauté et profitez d’offres exclusives.
 					</p>
 				</div>
 
 				<div class="p-6 bg-base-100 rounded-xl shadow hover:shadow-lg transition">
-					<h3 class="text-xl font-semibold mb-2">🤖 IA & Chat intelligent</h3>
+					<h3 class="text-xl font-semibold mb-2">🤖 Chat & IA intelligente</h3>
 					<p>
-						Jaayko intègre une intelligence artificielle capable de <strong>comprendre le langage naturel (NLP)</strong>.
-						L’assistant analyse vos messages pour <strong>catégoriser automatiquement les produits</strong>,
-						<strong>créer des transactions</strong> et même <strong>générer des commandes</strong> sans saisie manuelle.
-						Un véritable partenaire intelligent pour vendre et acheter plus vite.
+						Notre IA comprend vos messages grâce au <strong>NLP</strong> :
+						elle <strong>catégorise vos produits</strong>, <strong>crée vos transactions</strong> et
+						<strong>génère vos commandes</strong> automatiquement via le chat.
 					</p>
 				</div>
-
 			</div>
 		</div>
 	</section>
 
 	<!-- About Section -->
 	<section class="py-20 max-w-5xl mx-auto px-6">
-		<h2 class="text-3xl font-bold text-center text-primary mb-12">
-			À propos de Jaayko
-		</h2>
+		<h2 class="text-3xl font-bold text-center text-primary mb-12">À propos de Jaayko</h2>
 
 		<div class="flex flex-col md:flex-row items-center gap-8">
 			<div class="flex-1">
 				<p class="text-lg leading-relaxed">
-					<strong>Jaayko</strong> est une initiative développée par <strong>COUNDIA</strong>,
-					visant à digitaliser le commerce de proximité en Afrique de l’Ouest.
-					L’application offre aux commerçants, créateurs et entreprises locales
-					une plateforme moderne pour exposer leurs produits et interagir directement avec leurs clients.
+					<strong>Jaayko</strong> est une innovation, conçue pour moderniser le
+					commerce de proximité en Afrique de l’Ouest.
+					Elle met en relation vendeurs, créateurs et clients à travers une expérience simple .
 				</p>
 
 				<p class="mt-4 text-lg leading-relaxed">
-					Jaayko intègre des fonctionnalités modernes comme la gestion de stock,
-					les paiements locaux, la messagerie intégrée et l’intelligence artificielle
-					pour enregistrer une nouvelle commande (vente ou achat) via le chat.
+					Grâce à son IA intégrée, Jaayko vous permet de <strong>vendre ou acheter via le chat</strong>,
+					sans formulaires ni complications.
+					Une nouvelle façon de commercer, plus rapide et plus humaine.
 				</p>
 			</div>
 
 			<div class="flex-1">
-				<img
-						src={appScreenshot.src}
-						alt="Aperçu Jaayko"
-						class="rounded-xl shadow-lg w-full"
-				/>
+				<img src={appScreenshot.src} alt="Aperçu Jaayko" class="rounded-xl shadow-lg w-full" />
 			</div>
 		</div>
 	</section>
@@ -121,12 +96,10 @@ const page = {
 	<section class="py-20 bg-primary text-primary-content text-center">
 		<h2 class="text-3xl font-bold mb-4">Rejoignez la communauté Jaayko</h2>
 		<p class="max-w-2xl mx-auto mb-8 opacity-90">
-			Téléchargez l’application dès aujourd’hui et commencez à vendre ou acheter des produits en toute simplicité.
+			Rejoignez la révolution du commerce digital.
+			Téléchargez Jaayko et commencez dès aujourd’hui à vendre ou acheter simplement.
 		</p>
-		<a
-				href="https://play.google.com/store/apps/details?id=com.pcoundia.jaayko"
-				class="btn btn-accent"
-		>
+		<a href="https://play.google.com/store/apps/details?id=com.pcoundia.jaayko" class="btn btn-accent">
 			Télécharger sur Google Play
 		</a>
 	</section>

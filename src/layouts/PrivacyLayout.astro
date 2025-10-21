@@ -1,0 +1,61 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import Head from '../components/ui/Head.astro';
+import Footer from '../components/ui/Footer.astro';
+import { seo, template } from '../data/settings';
+
+type Props = {
+	title?: string;
+	description?: string;
+	image?: string;
+};
+
+const {
+	title = seo.default_title,
+	description = seo.default_description,
+	image = seo.default_image,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+<head>
+	{template.transitions && <ClientRouter />}
+	<Head title={title} description={description} image={image} />
+</head>
+
+<body class="bg-base-100   leading-relaxed">
+<main
+		id="wrapper"
+		class="p-8 pt-12 lg:max-w-5xl max-w-full mx-auto min-h-screen flex flex-col justify-between"
+>
+	<!-- Main content slot -->
+	<div id="content" class="pb-12">
+		<slot />
+	</div>
+
+	<!-- Footer -->
+	<div id="footerWrapper" class="py-6 border-t flex justify-center items-center">
+		<Footer />
+	</div>
+</main>
+
+<style>
+    #content::-webkit-scrollbar {
+        width: 10px;
+    }
+    #content::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+        border-radius: 10px;
+    }
+    #content::-webkit-scrollbar-thumb {
+        background-color: #c1c1c1;
+        border-radius: 10px;
+        border: 2px solid #f1f1f1;
+    }
+    * {
+        scrollbar-width: thin;
+    }
+</style>
+</body>
+</html>

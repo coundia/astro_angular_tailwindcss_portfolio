@@ -26,8 +26,8 @@ export const Projects = [
 		title: "Jaayko",
 		logo: flutterLogo,
 		description: "Une app multi-plateforme (Desktop, Android, IOS) qui connecte vendeurs et acheteurs sans intermédiaire." +
-			" Publiez, discutez, vendez ou achetez — le tout en quelques secondes grave à l'IA.",
-		resume: "Stack : Flutter • SQLite • DDD • sync différée  ",
+			" Publiez, discutez, vendez ou achetez — le tout en quelques secondes grace à l'IA.",
+		resume: "Stack : Flutter • SQLite • DDD • sync différée • IA intégrée - local first.",
 		link: "https://www.pcoundia.com/app/jaayko",
 	},
 	{

@@ -9,6 +9,14 @@ import ddd1 from "../assets/ddd1.png";
 
 export const Projects = [
 	{
+		title: "Jaayko",
+		logo: flutterLogo,
+		description: "Une app multi-plateforme (Desktop, Android, IOS) qui connecte vendeurs et acheteurs sans intermédiaire." +
+			" Publiez, discutez, vendez ou achetez — le tout en quelques secondes grace à l'IA.",
+		resume: "Stack : Flutter • SQLite • DDD • sync différée • IA intégrée - local first.",
+		link: "https://www.pcoundia.com/app/jaayko",
+	},
+	{
 		title: "DDD Maker Bundle (Symfony)",
 		logo: dddLogo,
 		description: "Bundle Symfony open-source pour générer rapidement des couches DDD (aggregates, value objects, use cases) suivant CQRS. Accélère le kick-off et impose une architecture cohérente.",
@@ -22,14 +30,7 @@ export const Projects = [
 		resume: "Stack : Laravel 12 • Filament 4 • L5-Swagger • Sanctum • laravel-permission • micro-services.",
 		link: "https://github.com/coundia/top-all-money-laravel",
 	},
-	{
-		title: "Jaayko",
-		logo: flutterLogo,
-		description: "Une app multi-plateforme (Desktop, Android, IOS) qui connecte vendeurs et acheteurs sans intermédiaire." +
-			" Publiez, discutez, vendez ou achetez — le tout en quelques secondes grace à l'IA.",
-		resume: "Stack : Flutter • SQLite • DDD • sync différée • IA intégrée - local first.",
-		link: "https://www.pcoundia.com/app/jaayko",
-	},
+
 	{
 		title: "Portfolio (Angular)",
 		logo: portfolioLogo,

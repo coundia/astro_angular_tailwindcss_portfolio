@@ -1,6 +1,7 @@
 ---
 import PrivacyLayout from '../../layouts/PrivacyLayout.astro'
 import appScreenshot from '../../assets/jaayko.png'
+import appPreview from '../../assets/topall_flutter.png'
 import logo from '../../assets/jaayko.png'
 
 const page = {
@@ -18,7 +19,7 @@ const page = {
 		<h1 class="text-4xl font-bold text-primary">Bienvenue sur Jaayko</h1>
 
 		<p class="max-w-2xl text-lg opacity-80">
-			La plateforme qui connecte <strong>vendeurs</strong> et <strong>acheteurs</strong> au Sénégal.
+			La plateforme qui connecte <strong>vendeurs</strong> et <strong>acheteurs</strong> sans intermédiaire.
 			Publiez, discutez, vendez ou achetez — le tout en quelques secondes.
 		</p>
 
@@ -31,6 +32,7 @@ const page = {
 				Règles de confidentialité
 			</a>
 		</div>
+
 	</section>
 
 	<!-- Features Section -->
@@ -65,6 +67,11 @@ const page = {
 				</div>
 			</div>
 		</div>
+		<img
+				src={appPreview.src}
+				alt="Aperçu Jaayko App"
+				class="w-full max-w-4xl mt-12 rounded-2xl shadow-lg"
+		/>
 	</section>
 
 	<!-- About Section -->
@@ -74,15 +81,14 @@ const page = {
 		<div class="flex flex-col md:flex-row items-center gap-8">
 			<div class="flex-1">
 				<p class="text-lg leading-relaxed">
-					<strong>Jaayko</strong> est une innovation, conçue pour moderniser le
-					commerce de proximité en Afrique de l’Ouest.
-					Elle met en relation vendeurs, créateurs et clients à travers une expérience simple .
+					<strong>Jaayko</strong> est une innovation conçue pour moderniser le commerce de proximité en Afrique de l’Ouest.
+					Elle relie vendeurs, créateurs et clients à travers une expérience simple et humaine.
 				</p>
 
 				<p class="mt-4 text-lg leading-relaxed">
 					Grâce à son IA intégrée, Jaayko vous permet de <strong>vendre ou acheter via le chat</strong>,
 					sans formulaires ni complications.
-					Une nouvelle façon de commercer, plus rapide et plus humaine.
+					Une nouvelle façon de commercer, plus rapide et plus intuitive.
 				</p>
 			</div>
 
@@ -92,7 +98,47 @@ const page = {
 		</div>
 	</section>
 
-	<!-- CTA -->
+	<!-- Tester Section -->
+	<section class="py-20 bg-base-200 text-center">
+		<h2 class="text-3xl font-bold text-primary mb-6">Participez aux tests de Jaayko 🚀</h2>
+		<p class="max-w-2xl mx-auto text-lg opacity-80 mb-8">
+			Vous souhaitez tester l’application avant son lancement officiel ?
+			Inscrivez votre adresse e-mail ci-dessous pour recevoir un lien d’accès exclusif à la version bêta.
+		</p>
+
+		<form
+				name="jaayko-beta"
+				method="POST"
+				data-netlify="true"
+				class="flex flex-col sm:flex-row justify-center gap-4 max-w-xl mx-auto"
+		>
+			<input type="hidden" name="form-name" value="jaayko-beta" />
+			<input
+					type="email"
+					name="email"
+					placeholder="Votre adresse e-mail"
+					required
+					class="input input-bordered w-full"
+			/>
+			<button type="submit" class="btn btn-primary">
+				S’inscrire
+			</button>
+
+		</form>
+		<hr class="my-8" />
+
+		<a href="https://play.google.com/apps/internaltest/4701653467393811389" target="_blank" rel="noopener noreferrer" class="link">
+
+			<button class="btn btn-accent">
+				Participer au test interne (Android)
+			</button>
+
+		</a>
+
+		<p class="text-sm opacity-60 mt-4">Aucun spam — uniquement les infos de test Jaayko.</p>
+	</section>
+
+	<!-- CTA
 	<section class="py-20 bg-primary text-primary-content text-center">
 		<h2 class="text-3xl font-bold mb-4">Rejoignez la communauté Jaayko</h2>
 		<p class="max-w-2xl mx-auto mb-8 opacity-90">
@@ -102,5 +148,5 @@ const page = {
 		<a href="https://play.google.com/store/apps/details?id=com.pcoundia.jaayko" class="btn btn-accent">
 			Télécharger sur Google Play
 		</a>
-	</section>
+	</section -->
 </PrivacyLayout>

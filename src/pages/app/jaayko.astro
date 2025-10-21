@@ -14,7 +14,7 @@ const page = {
 <PrivacyLayout title={page.title} description={page.description}>
 	<!-- Hero Section -->
 	<section class="py-16 text-center flex flex-col items-center gap-6">
-		<img src={logo.src} alt="Logo Jaayko" loading="lazy" class="w-28 h-28 object-contain" />
+		<img src={logo.src} alt="Logo Jaayko" loading="lazy" class="w-28 h-28 object-contain"/>
 
 		<h1 class="text-4xl font-bold text-primary">Bienvenue sur Jaayko</h1>
 
@@ -24,11 +24,11 @@ const page = {
 		</p>
 
 		<div class="flex flex-wrap justify-center gap-4 mt-6">
-			<a href="https://play.google.com/store/apps/details?id=com.jaayko" class="btn btn-primary">
-				Télécharger sur Google Play
-			</a>
+			<!--<a href="https://play.google.com/store/apps/details?id=com.pcoundia.jaayko" target="_blank"  class="btn btn-primary">-->
+			<!--	Télécharger sur Google Play-->
+			<!--</a>-->
 
-			<a href="https://www.pcoundia.com/app/jaayko-privacy" class="btn btn-outline">
+			<a href="https://www.pcoundia.com/app/jaayko-privacy" target="_blank" class="btn btn-outline">
 				Règles de confidentialité
 			</a>
 		</div>
@@ -44,7 +44,8 @@ const page = {
 				<div class="p-6 bg-base-100 rounded-xl shadow hover:shadow-lg transition">
 					<h3 class="text-xl font-semibold mb-2">🛍️ Vendez facilement</h3>
 					<p>
-						Vendez vos <strong>produits</strong>, vos <strong>créations</strong> ou vos <strong>compétences</strong>.
+						Vendez vos <strong>produits</strong>, vos <strong>créations</strong> ou vos
+						<strong>compétences</strong>.
 						En quelques clics, publiez une offre et touchez instantanément des acheteurs proches de vous.
 					</p>
 				</div>
@@ -81,7 +82,8 @@ const page = {
 		<div class="flex flex-col md:flex-row items-center gap-8">
 			<div class="flex-1">
 				<p class="text-lg leading-relaxed">
-					<strong>Jaayko</strong> est une innovation conçue pour moderniser le commerce de proximité en Afrique de l’Ouest.
+					<strong>Jaayko</strong> est une innovation conçue pour moderniser le commerce de proximité en
+					Afrique de l’Ouest.
 					Elle relie vendeurs, créateurs et clients à travers une expérience simple et humaine.
 				</p>
 
@@ -93,7 +95,7 @@ const page = {
 			</div>
 
 			<div class="flex-1">
-				<img src={appScreenshot.src} alt="Aperçu Jaayko" class="rounded-xl shadow-lg w-full" />
+				<img src={appScreenshot.src} alt="Aperçu Jaayko" class="rounded-xl shadow-lg w-full"/>
 			</div>
 		</div>
 	</section>
@@ -103,37 +105,34 @@ const page = {
 		<h2 class="text-3xl font-bold text-primary mb-6">Participez aux tests de Jaayko 🚀</h2>
 		<p class="max-w-2xl mx-auto text-lg opacity-80 mb-8">
 			Vous souhaitez tester l’application avant son lancement officiel ?
-			Inscrivez votre adresse e-mail ci-dessous pour recevoir un lien d’accès exclusif à la version bêta.
+			Lien d’accès exclusif à la version alpha.
+			Limité aux utilisateurs Android disposant d’un compte Google.
+
+			Vous devez garder l'application installée pendant la période de test (environ 14 jours).
+
 		</p>
 
-		<form
-				name="jaayko-beta"
-				method="POST"
-				data-netlify="true"
-				class="flex flex-col sm:flex-row justify-center gap-4 max-w-xl mx-auto"
-		>
-			<input type="hidden" name="form-name" value="jaayko-beta" />
-			<input
-					type="email"
-					name="email"
-					placeholder="Votre adresse e-mail"
-					required
-					class="input input-bordered w-full"
-			/>
-			<button type="submit" class="btn btn-primary">
-				S’inscrire
-			</button>
+		<p>
+			Pour tous problèmes ou questions, contactez-nous à l’adresse :
+			<strong>
+				<a href="mailto:contact@pcoundia.com">coundia@pcoundia.com</a>
+			</strong>
 
-		</form>
-		<hr class="my-8" />
+		</p>
 
-		<a href="https://play.google.com/apps/internaltest/4701653467393811389" target="_blank" rel="noopener noreferrer" class="link">
 
-			<button class="btn btn-accent">
-				Participer au test interne (Android)
-			</button>
+		<div class="m-10">
+			<a href="https://play.google.com/apps/internaltest/4701653467393811389" target="_blank"
+			   rel="noopener noreferrer">
 
-		</a>
+				<button class="btn btn-accent link">
+					Cliquez ici : Pour participer aux tests interned (Android)
+				</button>
+
+
+			</a>
+		</div>
+
 
 		<p class="text-sm opacity-60 mt-4">Aucun spam — uniquement les infos de test Jaayko.</p>
 	</section>

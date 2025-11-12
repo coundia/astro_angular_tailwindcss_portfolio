@@ -3,6 +3,8 @@ import PrivacyLayout from '../../layouts/PrivacyLayout.astro'
 import appScreenshot from '../../assets/jaayko.png'
 import appPreview from '../../assets/topall_flutter.png'
 import logo from '../../assets/jaayko.png'
+import {ContactComponent} from "../../components/contact/ContactComponent";
+import {WhitelistJoinComponent} from "../../components/whitelist-join/whitelist-join";
 
 const page = {
 	title: 'Jaayko – La nouvelle génération du commerce au Sénégal',
@@ -32,6 +34,11 @@ const page = {
 				Règles de confidentialité
 			</a>
 		</div>
+
+
+		<WhitelistJoinComponent client:visible  name="Max"/>
+
+
 
 	</section>
 
@@ -122,15 +129,7 @@ const page = {
 
 
 		<div class="m-10">
-			<a href="https://play.google.com/apps/internaltest/4701653467393811389" target="_blank"
-			   rel="noopener noreferrer">
-
-				<button class="btn btn-accent link">
-					Cliquez ici : Pour participer aux tests interned (Android)
-				</button>
-
-
-			</a>
+			<WhitelistJoinComponent client:visible  name="Max"/>
 		</div>
 
 

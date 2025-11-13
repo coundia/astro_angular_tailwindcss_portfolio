@@ -1,27 +1,35 @@
 ---
+// src/pages/contact.astro
 import Layout from "../layouts/Layout.astro";
-import {CvFr} from "../data/CvFr";
-import BetterIcon from "../components/ui/BetterIcon.astro";
-import List from "../components/ui/List.astro";
-
-import {HelloComponent} from '../components/hello/HelloComponent';
-import {ContactComponent} from "@/components/contact/ContactComponent";
+import { CvFr } from "../data/CvFr";
 import SocialIconsDetails from "../components/ui/SocialIconsDetails.astro";
-import {AnimatedTextComponent} from "../components/animation/AnimatedTextComponent";
-const helpText = "Helping binding";
+import { AnimatedTextComponent } from "../components/animation/AnimatedTextComponent";
+import {WhitelistJoinComponent} from "../components/whitelist-join/whitelist-join";
 ---
 
-<Layout title=`Contact ${CvFr.person.fullName}`>
-	<div class="flex justify-center items-center flex-col max-w-none">
+<Layout title={`Contact ${CvFr.person.fullName}`}>
+	<div class="flex justify-center items-center flex-col">
 		<h1 class="text-3xl font-bold mb-8">
-			<AnimatedTextComponent text= "Contactez - moi"  timer=200 client:visible></AnimatedTextComponent>
+			<AnimatedTextComponent text="Contactez - moi" timer={200} client:visible />
 		</h1>
 
-		<div class="flex gap-4">
+		<div class="flex gap-4 mb-8">
 			<SocialIconsDetails />
 		</div>
 
-		<ContactComponent client:visible  name="Max"/>
 
+		<!-- Mode message simple (même endpoint) -->
+		<div class="mt-12 w-full">
+			<WhitelistJoinComponent
+					client:visible
+					title="Envoyer un message"
+					code="contact-message"
+					plateforme="portfolio"
+					status="NEW"
+					description="Message depuis la page Contact"
+					content="Message"
+					enableMessage={true}
+			/>
+		</div>
 	</div>
 </Layout>

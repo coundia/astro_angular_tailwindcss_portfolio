@@ -1,10 +1,9 @@
 ---
-import PrivacyLayout from '../../layouts/PrivacyLayout.astro'
-import appScreenshot from '../../assets/jaayko.png'
-import appPreview from '../../assets/topall_flutter.png'
-import logo from '../../assets/jaayko.png'
-import {ContactComponent} from "../../components/contact/ContactComponent";
-import {WhitelistJoinComponent} from "../../components/whitelist-join/whitelist-join";
+import PrivacyLayout from '../layouts/PrivacyLayout.astro'
+import appScreenshot from '../assets/jaayko.png'
+import appPreview from '../assets/topall_flutter.png'
+import logo from '../assets/jaayko.png'
+import {WhitelistJoinComponent} from "../components/whitelist-join/whitelist-join";
 
 const page = {
 	title: 'Jaayko – La nouvelle génération du commerce au Sénégal',
@@ -36,7 +35,17 @@ const page = {
 		</div>
 
 
-		<WhitelistJoinComponent client:visible  name="Max"/>
+		<!-- Mode inscription whitelist -->
+		<WhitelistJoinComponent
+				client:visible
+				title="Participez aux tests de Jaayko (Inscription à la whitelist)"
+				code="jayko-whitelist"
+				plateforme="jayko"
+				status="INITIATED"
+				description="Demande de whitelist via site"
+				enableMessage={false}
+		/>
+
 
 
 
@@ -128,9 +137,17 @@ const page = {
 		</p>
 
 
-		<div class="m-10">
-			<WhitelistJoinComponent client:visible  name="Max"/>
-		</div>
+		<!-- Mode inscription whitelist -->
+		<WhitelistJoinComponent
+				client:visible
+				title="Participez aux tests de Jaayko (Inscription à la whitelist)"
+				code="jayko-whitelist"
+				plateforme="jayko"
+				status="INITIATED"
+				description="Demande de whitelist via site"
+				enableMessage={true}
+		/>
+
 
 
 		<p class="text-sm opacity-60 mt-4">Aucun spam — uniquement les infos de test Jaayko.</p>

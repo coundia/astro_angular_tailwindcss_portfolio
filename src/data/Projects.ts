@@ -14,7 +14,7 @@ export const Projects = [
 		description: "Une app multi-plateforme (Desktop, Android, IOS) qui connecte vendeurs et acheteurs sans intermédiaire." +
 			" Publiez, discutez, vendez ou achetez — le tout en quelques secondes grace à l'IA. (octobre 2025)",
 		resume: "Front-end: Flutter (SQLite • DDD • sync différée • IA intégrée • local first) |  Backend: Spring Boot",
-		link: "https://www.pcoundia.com/app/jaayko",
+		link: "https://www.pcoundia.com/jaayko",
 	},
 	{
 		title: "DDD Maker Bundle (Symfony)",

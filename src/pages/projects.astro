@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { Projects } from "../data/Projects";
 import { CvFr } from "../data/CvFr";
 import { AnimatedTextComponent } from "../components/animation/AnimatedTextComponent";
+import {WhitelistJoinComponent} from "../components/whitelist-join/whitelist-join";
 
 const getValidUrl = (url: string) =>
     url.startsWith("http://") || url.startsWith("https://") ? url : `https://${url}`;
@@ -48,6 +49,18 @@ const getValidUrl = (url: string) =>
                 <p class="text-sm mb-3">
                   <span class="italic">{project.description}</span>{project.time ? ` • ${project.time}` : ""}
                 </p>
+
+                <!-- Mode inscription whitelist -->
+                <WhitelistJoinComponent
+                    client:visible
+                    title=`Intéressé par le projet  ${project.title} ?`
+                    code=`${project.title}-interest`
+                    plateforme=`${project.title} ?`
+                    status="INITIATED"
+                    description="Demande de whitelist via site"
+                    enableMessage={true}
+                />
+
                 <p class="text-sm text-base-content/80">{project.abstract}</p>
                 <div class="card-actions justify-end mt-4">
                   <a href={getValidUrl(project.link)} target="_blank" class="btn btn-sm btn-primary text-secondary-content">

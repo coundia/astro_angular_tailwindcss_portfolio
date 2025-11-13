@@ -5,7 +5,7 @@ import CvTimeline from '../components/ui/CvTimeline.astro'
 
 import List from '../components/ui/List.astro'
 import {AnimatedTextComponent} from "../components/animation/AnimatedTextComponent";
-
+import {WhitelistJoinComponent} from "../components/whitelist-join/whitelist-join";
 const { experiences, formations, certifications,person } = CvFr;
 
 
@@ -49,5 +49,18 @@ const { experiences, formations, certifications,person } = CvFr;
 					</section>
 		)
 	}
+	<div class="mt-12 w-full">
+		<WhitelistJoinComponent
+				client:visible
+				title="Envoyer un message"
+				code="contact-message"
+				plateforme="portfolio"
+				status="NEW"
+				description="Message depuis la page Contact"
+				content="Message"
+				enableMessage={true}
+		/>
+	</div>
+
 
 </Layout>

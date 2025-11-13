@@ -9,6 +9,7 @@ import Hero from '../components/ui/Hero.astro'
 import Grid from '../components/ui/Grid.astro'
 import ArticleList from '../components/ui/ArticleList.astro'
 import {HomeFr} from "../data/HomeFr";
+import {WhitelistJoinComponent} from "../components/whitelist-join/whitelist-join";
 
 const { fullName, title, institute } = CvFr.person
 
@@ -32,4 +33,20 @@ const { fullName, title, institute } = CvFr.person
 	<section class='py-12 border-t'>
 		<ArticleList listTitle={HomeFr.services} listItems={Services} />
 	</section>
+	<section class='py-12 border-t'>
+	<div class="mt-12 w-full">
+		<WhitelistJoinComponent
+				client:visible
+				title="Envoyer un message"
+				code="contact-message"
+				plateforme="portfolio"
+				status="NEW"
+				description="Message depuis la page Contact"
+				content="Message"
+				enableMessage={true}
+		/>
+	</div>
+	</section>
+
+
 </Layout>

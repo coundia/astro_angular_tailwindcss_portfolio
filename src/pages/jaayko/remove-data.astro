@@ -1,9 +1,10 @@
 ---
-import PrivacyLayout from '../layouts/PrivacyLayout.astro'
-import appScreenshot from '../assets/jaayko.png'
-import appPreview from '../assets/topall_flutter.png'
-import logo from '../assets/jaayko.png'
-import {WhitelistJoinComponent} from "../components/whitelist-join/whitelist-join";
+import PrivacyLayout from '../../layouts/PrivacyLayout.astro'
+import appScreenshot from '../../assets/jaayko.png'
+import appPreview from '../../assets/topall_flutter.png'
+import logo from '../../assets/jaayko.png'
+import {WhitelistJoinComponent} from "../../components/whitelist-join/whitelist-join";
+import {RemoveMyDataComponent} from "../../components/remove-my-data/remove-my-data";
 
 const page = {
 	title: 'Jaayko – La nouvelle génération du commerce au Sénégal',
@@ -17,7 +18,7 @@ const page = {
 	<section class="py-16 text-center flex flex-col items-center gap-6">
 		<img src={logo.src} alt="Logo Jaayko" loading="lazy" class="w-28 h-28 object-contain"/>
 
-		<h1 class="text-4xl font-bold text-primary">Bienvenue sur Jaayko</h1>
+		<h1 class="text-4xl font-bold text-primary">Jaayko App</h1>
 
 		<p class="max-w-2xl text-lg opacity-80">
 			La plateforme qui connecte <strong>vendeurs</strong> et <strong>acheteurs</strong> sans intermédiaire.
@@ -25,15 +26,10 @@ const page = {
 		</p>
 
 
+
 		<!-- Mode inscription whitelist -->
-		<WhitelistJoinComponent
+		<RemoveMyDataComponent
 				client:visible
-				title="Participez aux tests de Jaayko (Inscription à la whitelist)"
-				code="jayko-whitelist"
-				plateforme="jayko"
-				status="INITIATED"
-				description="Demande de whitelist via site"
-				enableMessage={false}
 		/>
 
 
@@ -74,11 +70,7 @@ const page = {
 				</div>
 			</div>
 		</div>
-		<img
-				src={appPreview.src}
-				alt="Aperçu Jaayko App"
-				class="w-full max-w-4xl mt-12 rounded-2xl shadow-lg"
-		/>
+
 	</section>
 
 	<!-- About Section -->
@@ -105,32 +97,11 @@ const page = {
 			</div>
 		</div>
 	</section>
+	<section class="py-20  text-center">
 
-	<!-- Tester Section -->
-	<section class="py-20 bg-base-200 text-center">
-		<h2 class="text-3xl font-bold text-primary mb-6">Participez aux tests de Jaayko 🚀</h2>
-		<p class="max-w-2xl mx-auto text-lg opacity-80 mb-8">
-			Vous souhaitez tester l’application avant son lancement officiel ?
-			Lien d’accès exclusif à la version alpha.
-			Limité aux utilisateurs Android disposant d’un compte Google.
-
-			Vous devez garder l'application installée pendant la période de test (environ 14 jours).
-
-		</p>
-
-		<p>
-			Pour tous problèmes ou questions, contactez-nous à l’adresse :
-			<strong>
-				<a href="mailto:contact@pcoundia.com">coundia@pcoundia.com</a>
-			</strong>
-
-		</p>
-
-
-		<!-- Mode inscription whitelist -->
 		<WhitelistJoinComponent
 				client:visible
-				title="Participez aux tests de Jaayko (Inscription à la whitelist)"
+				title="Contactez - nous"
 				code="jayko-whitelist"
 				plateforme="jayko"
 				status="INITIATED"
@@ -143,32 +114,6 @@ const page = {
 		<p class="text-sm opacity-60 mt-4">Aucun spam — uniquement les infos de test Jaayko.</p>
 	</section>
 
-	<!-- CTA
-	<section class="py-20 bg-primary text-primary-content text-center">
-		<h2 class="text-3xl font-bold mb-4">Rejoignez la communauté Jaayko</h2>
-		<p class="max-w-2xl mx-auto mb-8 opacity-90">
-			Rejoignez la révolution du commerce digital.
-			Téléchargez Jaayko et commencez dès aujourd’hui à vendre ou acheter simplement.
-		</p>
-		<a href="https://play.google.com/store/apps/details?id=com.pcoundia.jaayko" class="btn btn-accent">
-			Télécharger sur Google Play
-		</a>
-	</section -->
-
-	<section class="py-20   text-center">
-		<div class="flex flex-wrap justify-center gap-4 mt-6">
-			<a href="/jaayko/privacy" target="_blank" class="btn btn-outline">
-				Règles de confidentialité
-			</a>
-		</div>
-
-		<div class="flex flex-wrap justify-center gap-4 mt-6">
-			<a href="/jaayko/remove-data" target="_blank"  class="btn btn-outline">
-				Supprimer mes données
-			</a>
-		</div>
-	</section>
-
 	<section>
 		<h2 class="text-2xl font-semibold  mb-3">🔹 Contact</h2>
 		<p>Pour toute question, suggestion ou plainte, veuillez nous contacter :</p>
@@ -179,4 +124,5 @@ const page = {
 			<li>🌐 <a href="/jaayko/remove-data" class=" underline"> Supprimer mes données</a></li>
 		</ul>
 	</section>
+
 </PrivacyLayout>
